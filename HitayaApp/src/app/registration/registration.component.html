@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="forms-container">
+    <div class="signin-signup">
+
+      <!--<form #signinForm="ngForm"--> <!--(ngSubmit)="submitLoginForm(signinForm)"--> <!--class="sign-in-form">
+        <h2 class="title">Sign in</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>-->
+          <!--<input type="text" value={{user.address}} name="crypto_id" disabled required />-->
+        <!--</div>
+
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" #PassRef name="password" ngModel placeholder="Password" required />
+        </div>
+
+
+
+        <input type="submit" [disabled]="!signinForm.form.valid" value="Login" class="btn solid" />
+        <p class="social-text">Follow us on social media platforms</p>
+        <div class="social-media">
+          <a href="https://www.facebook.com" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.twitter.com" class="social-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com" class="social-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </form>-->
+
+
+      <!--<form class="sign-up-form" #signupForm="ngForm" (ngSubmit)="SubmitSignUpForm(signupForm)">
+        <h2 class="title">Sign up</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>-->
+          <!--<input type="text" #NameRef value="{{name}}" name="name" ngModel placeholder="Username" required disabled />-->
+        <!--</div>
+        <div class="input-field">
+          <i class="fas fa-id-card"></i>-->
+          <!--<input type="text" #idRef value="{{id}}" name="id" ngModel placeholder="Employee Id" required disabled />-->
+        <!--</div>
+        
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" #PassRef name="password" ngModel placeholder="Password" required />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-key"></i>-->
+          <!--<input type="text" value={{user.address}} #CryptoRef name="crypto" ngModel placeholder="Public Crypto Key" required disabled />-->
+        <!--</div>
+
+
+        <div>
+          <img [src]="url" height="200"> <br />
+        </div>
+        <div>
+          <input #imageInput type="file" id="file" accept="image/*" (change)="onSelectFile($event)">
+          
+        </div>
+
+
+
+
+        <input type="submit" class="btn" [disabled]="!signupForm.form.valid" value="Sign up" />
+        <p class="social-text">Follow us on social media platforms</p>
+        <div class="social-media">
+          <a href="https://www.facebook.com" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.twitter.com" class="social-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com" class="social-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </form>-->
+    </div>
+  </div>
+
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content">
+        <h3>New here ?</h3>
+        <p>
+          Already signed up for Hitaya? Then login to leverage the power of BlockChain and Smart Contracts
+        </p>
+        <button class="btn transparent" id="sign-up-btn">
+          Sign up
+        </button>
+      </div>
+      <img src="assets/blockchain.svg" class="image" alt="" />
+    </div>
+    <div class="panel right-panel">
+      <div class="content">
+        <h3>One of us ?</h3>
+        <p>
+          Already an employee? Then signup and verify with your ID Card to start Hitaya app
+        </p>
+        <button class="btn transparent" id="sign-in-btn">
+          Sign in
+        </button>
+      </div>
+      <img src="assets/distributed.svg" class="image" alt="" />
+    </div>
+  </div>
+</div>
