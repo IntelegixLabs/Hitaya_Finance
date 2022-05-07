@@ -250,6 +250,6 @@ AS
 GO
 
 
-SELECT * FROM ufn_GetSpecificUser('CGDPD1480NA')
+SELECT * FROM ufn_GetSpecificUser('CGDPD1480N')
 
 

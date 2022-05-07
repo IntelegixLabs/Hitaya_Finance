@@ -1,0 +1,16 @@
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\bin\Debug\net5.0\appsettings.json
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\bin\Debug\net5.0\Hitaya_Finance.DAL.deps.json
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\bin\Debug\net5.0\Hitaya_Finance.DAL.runtimeconfig.json
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\bin\Debug\net5.0\Hitaya_Finance.DAL.runtimeconfig.dev.json
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\bin\Debug\net5.0\Hitaya_Finance.DAL.dll
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\bin\Debug\net5.0\ref\Hitaya_Finance.DAL.dll
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\bin\Debug\net5.0\Hitaya_Finance.DAL.pdb
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\obj\Debug\net5.0\Hitaya_Finance.DAL.csproj.AssemblyReference.cache
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\obj\Debug\net5.0\Hitaya_Finance.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\obj\Debug\net5.0\Hitaya_Finance.DAL.AssemblyInfoInputs.cache
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\obj\Debug\net5.0\Hitaya_Finance.DAL.AssemblyInfo.cs
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\obj\Debug\net5.0\Hitaya_Finance.DAL.csproj.CoreCompileInputs.cache
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\obj\Debug\net5.0\Hitaya_Finance.DAL.dll
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\obj\Debug\net5.0\ref\Hitaya_Finance.DAL.dll
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\obj\Debug\net5.0\Hitaya_Finance.DAL.pdb
+C:\Users\ZEUS\Desktop\Intelegix Labs\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance\Hitaya_Finance.DAL\obj\Debug\net5.0\Hitaya_Finance.DAL.genruntimeconfig.cache
