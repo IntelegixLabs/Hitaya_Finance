@@ -31,7 +31,7 @@ namespace Hitaya_Finance.DAL.Models
                        .AddJsonFile("appsettings.json");
             var config = builder.Build();
 
-            var connectionString = config.GetConnectionString("InvestopiaDBConnectionString");
+            var connectionString = config.GetConnectionString("HitayaDBConnectionString");
 
 
             if (!optionsBuilder.IsConfigured)
