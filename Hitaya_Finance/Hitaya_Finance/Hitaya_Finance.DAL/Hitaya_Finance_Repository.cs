@@ -155,7 +155,7 @@ namespace Hitaya_Finance.DAL
         }
 
 
-        public List<Userdetail> GetUserFinance(string PAN_CARD)
+        public List<Userdetail> GetUserData(string PAN_CARD)
         {
             List<Userdetail> lstdetail = null;
             try
