@@ -8,10 +8,13 @@ import { LoadingComponent } from './loading/loading.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { CommonLayoutComponent } from './common-layout/common-layout.component';
 import { FooterComponent } from './footer/footer.component';
-import { WalletComponent } from './wallet/wallet.component';
-import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.component';
-import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { Itr1Component } from './itr1/itr1.component';
+import { Itr2Component } from './itr2/itr2.component';
+import { Itr3Component } from './itr3/itr3.component';
+import { Itr4Component } from './itr4/itr4.component';
+import { Itr5Component } from './itr5/itr5.component';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +23,14 @@ import { LoginComponent } from './login/login.component';
     RegistrationComponent,
     CommonLayoutComponent,
     FooterComponent,
-    WalletComponent,
     EditUserDetailsComponent,
-    UserDashboardComponent,
-    LoginComponent
+    LoginComponent,
+    Itr1Component,
+    Itr2Component,
+    Itr3Component,
+    Itr4Component,
+    Itr5Component,
+    IndexComponent
   ],
   imports: [
     BrowserModule,

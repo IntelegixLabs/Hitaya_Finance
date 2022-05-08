@@ -1,1 +1,41 @@
-<p>login works!</p>
+<app-common-loyout></app-common-loyout>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+
+      <div class="row">
+        <div class="col-sm-4 col-md-4">
+          <img class="w-100 img-fluid d-none d-sm-block" src="assets/img/pan.svg" />
+        </div>
+        <div class="col-12 col-sm-8 col-md-8">
+          <div class="mx-4 mx-sm-0">
+            <h5 class="mt-4 mt-md-5">PAN (Permanent Account Number)</h5>
+            <p class="type-7 my-0 text-primary">
+              For Individuals <span class="text-muted">(Salaried employee, Senior citizen, Self-employed, NRI)</span>
+            </p>
+            <p class="type-7 my-0 text-primary">
+              For Other Than Individuals <span class="text-muted">(Company, Trust, AOP, AJP, BOI, Firm, Local Authority)</span>
+            </p>
+
+            <br />
+
+            <h6>Enter PAN: <span class="text-danger">*</span></h6>
+            <div class="form-group row">
+              <div class="col-6">
+                <input type="text" class="form-control" placeholder="Enter PAN" />
+                <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+              </div>
+              <div class="col-2">
+                <button class="btn btn-primary"><i class="fa fa-arrow-right fa-fw"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

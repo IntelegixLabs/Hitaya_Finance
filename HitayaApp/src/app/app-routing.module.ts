@@ -2,17 +2,28 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LoadingComponent } from './loading/loading.component';
+import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { WalletComponent } from './wallet/wallet.component';
-import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.component';
-import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { IndexComponent } from './index/index.component';
+import { Itr1Component } from './itr1/itr1.component';
+import { Itr2Component } from './itr2/itr2.component';
+import { Itr3Component } from './itr3/itr3.component';
+import { Itr4Component } from './itr4/itr4.component';
+import { Itr5Component } from './itr5/itr5.component';
+
+
+
 
 const routes: Routes = [
   { path: '', component: LoadingComponent },
-  { path: 'register', component: RegistrationComponent },
-  { path: 'wallet', component: WalletComponent/*, canActivate: [AuthGuardService] */ },
-  { path: 'edit-user', component: EditUserDetailsComponent/*, canActivate: [AuthGuardService]*/ },
-  { path: 'user-dashboard', component: UserDashboardComponent/*, canActivate: [AuthGuardService] */ },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegistrationComponent/*, canActivate: [AuthGuardService] */ },
+  { path: 'index', component: IndexComponent/*, canActivate: [AuthGuardService] */ },
+  { path: 'itr1', component: Itr1Component/*, canActivate: [AuthGuardService] */ },
+  { path: 'itr2', component: Itr2Component/*, canActivate: [AuthGuardService] */ },
+  { path: 'itr3', component: Itr3Component/*, canActivate: [AuthGuardService] */ },
+  { path: 'itr4', component: Itr4Component/*, canActivate: [AuthGuardService] */ },
+  { path: 'itr5', component: Itr5Component/*, canActivate: [AuthGuardService] */ },
 ];
 
 @NgModule({
