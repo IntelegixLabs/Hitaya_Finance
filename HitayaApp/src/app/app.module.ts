@@ -23,7 +23,6 @@ import { IndexComponent } from './index/index.component';
     RegistrationComponent,
     CommonLayoutComponent,
     FooterComponent,
-    EditUserDetailsComponent,
     LoginComponent,
     Itr1Component,
     Itr2Component,
