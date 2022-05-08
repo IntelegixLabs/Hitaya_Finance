@@ -1,116 +1,193 @@
-<div class="container">
-  <div class="forms-container">
-    <div class="signin-signup">
+<app-common-loyout></app-common-loyout>
 
-      <!--<form #signinForm="ngForm"--> <!--(ngSubmit)="submitLoginForm(signinForm)"--> <!--class="sign-in-form">
-        <h2 class="title">Sign in</h2>
-        <div class="input-field">
-          <i class="fas fa-user"></i>-->
-          <!--<input type="text" value={{user.address}} name="crypto_id" disabled required />-->
-        <!--</div>
 
-        <div class="input-field">
-          <i class="fas fa-lock"></i>
-          <input type="password" #PassRef name="password" ngModel placeholder="Password" required />
+
+<div class="container-fluid mt-5 mb-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="row">
+        <div class="col-sm-5 col-md-5">
+          <img class="w-100 img-fluid d-none d-sm-block" src="assets/img/user.svg" />
         </div>
+        <div class="col-12 col-sm-7 col-md-7">
+          <div class="mx-4 mx-sm-0">
+            <div class="row">
+              <div class="col-md-12">
+                <h3 class="super-bold">Register as Taxpayer</h3>
+                <p class="type-7 my-0 text-primary">
+                  Individuals / Hindu Undivided Family / Company / Trust / Local Authority /
+                  Artificial Juridical Person / Firm / Limited Liability Partnership /
+                  Association Of Persons / Political Party/ Government / Body Of Individuals
+                </p>
+                <br />
 
+                <h6 class="mb-0">Enter PAN: <span class="text-danger">*</span></h6>
+                <p class="my-0 mb-2 type-7 text-muted">
+                  (PAN will have first 5 alphabets followed by 4 digits and 1 alphabet)
+                </p>
+                <div class="form-group row">
+                  <div class="col-6">
+                    <input type="text" class="form-control" placeholder="Enter PAN" />
+                    <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                  </div>
+                </div>
+                <h6 class="mb-0">
+                  Please confirm if you want to register as
+                  <strong>"Individual taxpayer"</strong>
+                </h6>
+                <div class="row mt-1">
+                  <div class="col-md-8">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="individual-taxpayer1" name="individual-taxpayer" required>
+                          <label class="custom-control-label text-muted type-6" for="individual-taxpayer1">Yes</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="individual-taxpayer2" name="individual-taxpayer" required>
+                          <label class="custom-control-label text-muted type-6" for="individual-taxpayer2">No</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                <hr />
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6 for="first-name">First Name: <span class="text-danger">*</span></h6>
+                    <input type="text" class="form-control" id="first-name" placeholder="First Name" />
+                    <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                  </div>
+                  <div class="col-md-6">
+                    <h6 for="last-name">Last Name: <span class="text-danger">*</span></h6>
+                    <input type="text" class="form-control" id="last-name" placeholder="Last Name" />
+                    <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                  </div>
+                </div>
 
+                <br />
 
-        <input type="submit" [disabled]="!signinForm.form.valid" value="Login" class="btn solid" />
-        <p class="social-text">Follow us on social media platforms</p>
-        <div class="social-media">
-          <a href="https://www.facebook.com" class="social-icon">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://www.twitter.com" class="social-icon">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://www.instagram.com" class="social-icon">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com" class="social-icon">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6 for="phone">Phone: <span class="text-danger">*</span></h6>
+                    <input type="text" class="form-control" id="phone" placeholder="First Name" />
+                    <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                  </div>
+                  <div class="col-md-6">
+                    <h6 for="email">Email: <span class="text-danger">*</span></h6>
+                    <input type="text" class="form-control" id="email" placeholder="Last Name" />
+                    <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                  </div>
+                </div>
+
+                <br />
+
+                <h6 class="mb-0">
+                  Gender: <span class="text-danger">*</span>
+                </h6>
+                <div class="row mt-1">
+                  <div class="col-md-8">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="gender1" name="gender" required>
+                          <label class="custom-control-label text-muted type-6" for="gender1">Male</label>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="gender2" name="gender" required>
+                          <label class="custom-control-label text-muted type-6" for="gender2">Female</label>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="gender3" name="gender" required>
+                          <label class="custom-control-label text-muted type-6" for="gender3">Transgender</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+
+                <br />
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6 for="date-of-birth">Date of Birth: <span class="text-danger">*</span></h6>
+                    <input type="date" class="form-control" id="date-of-birth" placeholder="First Name" />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-6">
+                    <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                  </div>
+                </div>
+
+                <hr />
+
+                <div class="form-group">
+                  <h6 for="address">Address:</h6>
+                  <textarea id="address" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group row mt-2">
+                  <div class="col-4">
+                    <h6 for="pincode">Pincode: <span class="text-danger">*</span></h6>
+                    <input type="text" class="form-control" id="pincode" placeholder="Enter Pincode" />
+                    <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                  </div>
+                </div>
+
+                <br />
+
+                <h6 class="mb-0">
+                  Residential Status: <span class="text-danger">*</span>
+                </h6>
+                <div class="row mt-1">
+                  <div class="col-md-8">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="residential-status1" name="residential-status" required>
+                          <label class="custom-control-label text-muted type-6" for="residential-status1">Resident</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="residential-status2" name="residential-status" required>
+                          <label class="custom-control-label text-muted type-6" for="residential-status2">Non-resident</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+
+                <hr />
+
+                <div class="row">
+                  <div class="col-md-6"></div>
+                  <div class="col-md-6">
+                    <button class="btn btn-success btn-block">
+                      <span class="bold">CONTINUE</span>
+                      <i class="fa fa-arrow-right fa-fw"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </form>-->
-
-
-      <!--<form class="sign-up-form" #signupForm="ngForm" (ngSubmit)="SubmitSignUpForm(signupForm)">
-        <h2 class="title">Sign up</h2>
-        <div class="input-field">
-          <i class="fas fa-user"></i>-->
-          <!--<input type="text" #NameRef value="{{name}}" name="name" ngModel placeholder="Username" required disabled />-->
-        <!--</div>
-        <div class="input-field">
-          <i class="fas fa-id-card"></i>-->
-          <!--<input type="text" #idRef value="{{id}}" name="id" ngModel placeholder="Employee Id" required disabled />-->
-        <!--</div>
-        
-        <div class="input-field">
-          <i class="fas fa-lock"></i>
-          <input type="password" #PassRef name="password" ngModel placeholder="Password" required />
-        </div>
-        <div class="input-field">
-          <i class="fas fa-key"></i>-->
-          <!--<input type="text" value={{user.address}} #CryptoRef name="crypto" ngModel placeholder="Public Crypto Key" required disabled />-->
-        <!--</div>
-
-
-        <div>
-          <img [src]="url" height="200"> <br />
-        </div>
-        <div>
-          <input #imageInput type="file" id="file" accept="image/*" (change)="onSelectFile($event)">
-          
-        </div>
-
-
-
-
-        <input type="submit" class="btn" [disabled]="!signupForm.form.valid" value="Sign up" />
-        <p class="social-text">Follow us on social media platforms</p>
-        <div class="social-media">
-          <a href="https://www.facebook.com" class="social-icon">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://www.twitter.com" class="social-icon">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://www.instagram.com" class="social-icon">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com" class="social-icon">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
-      </form>-->
-    </div>
-  </div>
-
-  <div class="panels-container">
-    <div class="panel left-panel">
-      <div class="content">
-        <h3>New here ?</h3>
-        <p>
-          Already signed up for Hitaya? Then login to leverage the power of BlockChain and Smart Contracts
-        </p>
-        <button class="btn transparent" id="sign-up-btn">
-          Sign up
-        </button>
       </div>
-      <img src="assets/blockchain.svg" class="image" alt="" />
-    </div>
-    <div class="panel right-panel">
-      <div class="content">
-        <h3>One of us ?</h3>
-        <p>
-          Already an employee? Then signup and verify with your ID Card to start Hitaya app
-        </p>
-        <button class="btn transparent" id="sign-in-btn">
-          Sign in
-        </button>
-      </div>
-      <img src="assets/distributed.svg" class="image" alt="" />
+
     </div>
   </div>
 </div>
+
+
+<app-footer></app-footer>
