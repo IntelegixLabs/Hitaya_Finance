@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     FooterComponent,
     WalletComponent,
     EditUserDetailsComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
