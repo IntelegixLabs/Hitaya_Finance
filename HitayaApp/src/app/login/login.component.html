@@ -1,39 +1,41 @@
 <app-common-layout></app-common-layout>
 
-<div class="container mt-5">
+<div class="container-fluid mt-2 mb-5">
   <div class="row">
-    <div class="col-md-10 offset-md-1">
+    <div class="col-md-4 offset-md-4 col-lg-4 offset-lg-4">
 
-      <div class="row">
-        <div class="col-sm-4 col-md-4">
-          <img class="w-100 img-fluid d-none d-sm-block" src="assets/pan.svg" />
-        </div>
-        <div class="col-12 col-sm-8 col-md-8">
-          <div class="mx-4 mx-sm-0">
-            <h5 class="mt-4 mt-md-5">PAN (Permanent Account Number)</h5>
-            <p class="type-7 my-0 text-primary">
-              For Individuals <span class="text-muted">(Salaried employee, Senior citizen, Self-employed, NRI)</span>
+      <div class="px-5 px-sm-4 px-lg-5 mb-5">
+        <h3 class="mt-md-4 super-bold my-0">Login</h3>
+        <p class="type-6 my-0">
+          Don't have an account?
+          <a href="#">Register</a>
+        </p>
+        <div class="row">
+          <div class="col-10">
+            <div class="alert alert-danger mt-2">
+              <p class="my-0 type-6 text-center semi-bold">Wrong Credentials!</p>
+            </div>
+            <h6 class="mt-3">
+              Permanent Account Number (PAN): <span class="text-danger">*</span>
+            </h6>
+            <input type="text" class="form-control" placeholder="Enter PAN" />
+            <h6 class="mt-3">
+              Password: <span class="text-danger">*</span>
+            </h6>
+            <input type="text" class="form-control" placeholder="Enter Password" />
+            <p class="type-6 mt-1 text-end semi-bold">
+              <a href="#">Forgot Password?</a>
             </p>
-            <p class="type-7 my-0 text-primary">
-              For Other Than Individuals <span class="text-muted">(Company, Trust, AOP, AJP, BOI, Firm, Local Authority)</span>
-            </p>
-
-            <br />
-
-            <h6>Enter PAN: <span class="text-danger">*</span></h6>
-            <div class="form-group row">
-              <div class="col-6">
-                <input type="text" class="form-control" placeholder="Enter PAN" />
-                <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
-              </div>
-              <div class="col-2">
-                <button class="btn btn-primary"><i class="fa fa-arrow-right fa-fw"></i></button>
-              </div>
+            <div class="row mt-3">
+              <div class="col-md-12"></div>
+                <div class="d-grid">
+                  <button class="btn btn-success float-end py-2">
+                    <span class="bold"><i class="fa-solid fa-lock fa-fw"></i> LOGIN</span></button>
+                </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
