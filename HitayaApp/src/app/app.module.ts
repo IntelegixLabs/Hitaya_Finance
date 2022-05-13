@@ -15,6 +15,9 @@ import { Itr3Component } from './itr3/itr3.component';
 import { Itr4Component } from './itr4/itr4.component';
 import { Itr5Component } from './itr5/itr5.component';
 import { IndexComponent } from './index/index.component';
+import { TaxBenefitComponent } from './tax-benefit/tax-benefit.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TaxBenefitFormComponent } from './tax-benefit-form/tax-benefit-form.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { IndexComponent } from './index/index.component';
     Itr3Component,
     Itr4Component,
     Itr5Component,
-    IndexComponent
+    IndexComponent,
+    TaxBenefitComponent,
+    DashboardComponent,
+    TaxBenefitFormComponent
   ],
   imports: [
     BrowserModule,
