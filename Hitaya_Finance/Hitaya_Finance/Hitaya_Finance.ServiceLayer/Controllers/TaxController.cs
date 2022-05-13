@@ -111,7 +111,7 @@ namespace Hitaya_Finance.ServiceLayer.Controllers
         [HttpGet]
         public JsonResult GetUserDetails(string PanCard, string TAX_FILLING)
         {
-            List<Hitaya_Finance.DAL.Models.Userdetail> userDetails;
+            List<Hitaya_Finance.DAL.Models.TaxFilling> userDetails;
             try
             {
 

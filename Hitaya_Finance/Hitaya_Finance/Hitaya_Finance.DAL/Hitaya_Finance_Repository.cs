@@ -224,16 +224,16 @@ namespace Hitaya_Finance.DAL
         }
 
 
-        public List<Userdetail> GetUserData(string PAN_CARD, string FILLING_YEAR)
+        public List<TaxFilling> GetUserData(string PAN_CARD, string FILLING_YEAR)
         {
-            List<Userdetail> lstdetail = null;
+            List<TaxFilling> lstdetail = null;
             try
             {
                 SqlParameter prmPAN_CARD = new SqlParameter("@PAN_CARD", PAN_CARD);
                 SqlParameter prmFILLING_YEAR = new SqlParameter("@FILLING_YEAR", FILLING_YEAR);
 
-                lstdetail = context.Userdetails
-                                     .FromSqlRaw("SELECT * FROM ufn_GetSpecificTax(@PAN_CARD, @FILLING_YEAR)", new[] { prmPAN_CARD, prmFILLING_YEAR }).ToList();
+                lstdetail = context.TaxFillings
+                                     .FromSqlRaw("SELECT * FROM dbo.ufn_GetSpecificTax(@PAN_CARD, @FILLING_YEAR)", new[] { prmPAN_CARD, prmFILLING_YEAR }).ToList();
             }
             catch (Exception)
             {
