@@ -19,6 +19,7 @@ import { TaxBenefitComponent } from './tax-benefit/tax-benefit.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TaxBenefitFormComponent } from './tax-benefit-form/tax-benefit-form.component';
 import { IncomeTaxCalculatorComponent } from './income-tax-calculator/income-tax-calculator.component';
+import { UserLayoutComponent } from './user-layout/user-layout.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { IncomeTaxCalculatorComponent } from './income-tax-calculator/income-tax
     TaxBenefitComponent,
     DashboardComponent,
     TaxBenefitFormComponent,
-    IncomeTaxCalculatorComponent
+    IncomeTaxCalculatorComponent,
+    UserLayoutComponent
   ],
   imports: [
     BrowserModule,
