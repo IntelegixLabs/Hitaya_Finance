@@ -66,14 +66,30 @@ namespace Hitaya_Finance.DAL.Models
                     .HasColumnType("decimal(10, 2)")
                     .HasColumnName("ADVANCE_TAX_PAID");
 
+                entity.Property(e => e.FillingStatus)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("FILLING_STATUS");
+
                 entity.Property(e => e.FormSubmitted)
                     .IsRequired()
                     .HasMaxLength(20)
                     .IsUnicode(false)
                     .HasColumnName("FORM_SUBMITTED");
 
+                entity.Property(e => e.ItrForm)
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("ITR_FORM");
+
+                entity.Property(e => e.Reason)
+                    .HasMaxLength(200)
+                    .IsUnicode(false)
+                    .HasColumnName("REASON");
+
                 entity.Property(e => e.StandardDeduction)
-                    .HasColumnType("decimal(20, 2)")
+                    .HasColumnType("decimal(10, 2)")
                     .HasColumnName("Standard_Deduction");
 
                 entity.Property(e => e.Status)
@@ -85,6 +101,11 @@ namespace Hitaya_Finance.DAL.Models
                 entity.Property(e => e.TaxId)
                     .ValueGeneratedOnAdd()
                     .HasColumnName("TAX_ID");
+
+                entity.Property(e => e.TaxRegime)
+                    .HasMaxLength(5)
+                    .IsUnicode(false)
+                    .HasColumnName("TAX_REGIME");
 
                 entity.Property(e => e.TaxToBePaidRefunded)
                     .HasColumnType("decimal(10, 2)")
@@ -146,7 +167,7 @@ namespace Hitaya_Finance.DAL.Models
                     .WithMany(p => p.TaxFillings)
                     .HasForeignKey(d => d.PanCard)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__TAX_FILLI__PAN_C__2B3F6F97");
+                    .HasConstraintName("FK__TAX_FILLI__PAN_C__6383C8BA");
             });
 
             modelBuilder.Entity<Userdetail>(entity =>
@@ -163,9 +184,15 @@ namespace Hitaya_Finance.DAL.Models
 
                 entity.Property(e => e.Address)
                     .IsRequired()
-                    .HasMaxLength(100)
+                    .HasMaxLength(200)
                     .IsUnicode(false)
                     .HasColumnName("ADDRESS");
+
+                entity.Property(e => e.Dob)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("DOB");
 
                 entity.Property(e => e.Emailid)
                     .IsRequired()
@@ -178,6 +205,18 @@ namespace Hitaya_Finance.DAL.Models
                     .HasMaxLength(20)
                     .IsUnicode(false)
                     .HasColumnName("FIRSTNAME");
+
+                entity.Property(e => e.Gender)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("GENDER");
+
+                entity.Property(e => e.IndividualTax)
+                    .IsRequired()
+                    .HasMaxLength(3)
+                    .IsUnicode(false)
+                    .HasColumnName("INDIVIDUAL_TAX");
 
                 entity.Property(e => e.Lastname)
                     .IsRequired()
@@ -196,6 +235,18 @@ namespace Hitaya_Finance.DAL.Models
                     .HasMaxLength(20)
                     .IsUnicode(false)
                     .HasColumnName("PHONE_NUMBER");
+
+                entity.Property(e => e.Pin)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("PIN");
+
+                entity.Property(e => e.Resident)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("RESIDENT");
 
                 entity.Property(e => e.Roleid)
                     .IsRequired()
