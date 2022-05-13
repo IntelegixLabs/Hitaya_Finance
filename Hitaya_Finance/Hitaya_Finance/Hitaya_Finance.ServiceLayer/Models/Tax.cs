@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Hitaya_Finance.ServiceLayer.Models
 {
-    public class TaxFilling
+    public class Tax
     {
         public int TaxId { get; set; }
         public string PanCard { get; set; }
