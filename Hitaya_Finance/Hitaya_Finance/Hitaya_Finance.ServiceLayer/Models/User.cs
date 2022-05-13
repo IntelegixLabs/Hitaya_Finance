@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Hitaya_Finance.ServiceLayer.Models
 {
-    public class UserDetails
+    public class User
     {
         public int Userid { get; set; }
         public string PanCard { get; set; }

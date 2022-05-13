@@ -30,7 +30,18 @@ namespace Hitaya_Finance.ServiceLayer
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Hitaya_Finance.ServiceLayer", Version = "v1" });
+                c.ResolveConflictingActions(x => x.First());
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Tax", Version = "v1" });
+            });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("MyPolicy",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                    });
             });
         }
 
@@ -41,7 +52,14 @@ namespace Hitaya_Finance.ServiceLayer
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Hitaya_Finance.ServiceLayer v1"));
+                //app.UseSwagger(c =>
+                //{
+                //    c.RouteTemplate = "Tax/swagger/{documentName}/swagger.json";
+                //});
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tax");
+                });
             }
 
             app.UseHttpsRedirection();
@@ -49,6 +67,8 @@ namespace Hitaya_Finance.ServiceLayer
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("MyPolicy");
 
             app.UseEndpoints(endpoints =>
             {

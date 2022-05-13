@@ -12,33 +12,16 @@ namespace Hitaya_Finance.ServiceLayer.Controllers
 {
     [ApiController]
     [Route("api/[controller]/[action]")]
-    public class Hitaya_Finance_Controller : Controller
+    public class TaxController : Controller
     {
         public Hitaya_Finance_Repository Hitaya_Finance;
 
-        public Hitaya_Finance_Controller()
+        public TaxController()
         {
             Hitaya_Finance = new Hitaya_Finance_Repository();
         }
 
-        [HttpGet]
-        public JsonResult GetAllUser()
-        {
-            List<Hitaya_Finance.DAL.Models.Userdetail> AllUsers;
-            try
-            {
-
-                AllUsers = Hitaya_Finance.GetAllUser();
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                AllUsers = null;
-            }
-            return Json(AllUsers);
-        }
-
+       
 
 
         [HttpPost]
@@ -58,9 +41,6 @@ namespace Hitaya_Finance.ServiceLayer.Controllers
             }
             return result;
         }
-
-
-
 
 
 
@@ -86,7 +66,7 @@ namespace Hitaya_Finance.ServiceLayer.Controllers
 
 
         [HttpPost]
-        public int AddUserInformation(Hitaya_Finance.ServiceLayer.Models.TaxFilling tax)
+        public int AddTax(Hitaya_Finance.ServiceLayer.Models.Tax tax)
         {
             int result;
             try
@@ -107,7 +87,7 @@ namespace Hitaya_Finance.ServiceLayer.Controllers
 
 
         [HttpPost]
-        public int UpdateUserInformation(Hitaya_Finance.ServiceLayer.Models.TaxFilling tax)
+        public int UpdateTax(Hitaya_Finance.ServiceLayer.Models.Tax tax)
         {
             int result;
             try
