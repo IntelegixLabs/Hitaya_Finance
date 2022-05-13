@@ -45,6 +45,10 @@ namespace Hitaya_Finance.DAL.Models
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
+            modelBuilder.HasDbFunction(() => Hitaya_TaxContext.GetAllUser());
+
+            //modelBuilder.HasDbFunction(() => Hitaya_TaxContext.GetSpecificTax(string , string));
+
             modelBuilder.Entity<TaxFilling>(entity =>
             {
                 entity.HasKey(e => new { e.PanCard, e.FillingYear })
@@ -263,5 +267,19 @@ namespace Hitaya_Finance.DAL.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        [DbFunction("ufn_GetAllUser", "dbo")]
+        //[DbFunction()]
+        public static string GetAllUser()
+        {
+            return null;
+        }
+
+        //[DbFunction("ufn_GetSpecificTax", "dbo")]
+        ////[DbFunction()]
+        //public static string GetSpecificTax(string PAN_CARD, string FILLING_YEAR)
+        //{
+        //    return null;
+        //}
     }
 }
