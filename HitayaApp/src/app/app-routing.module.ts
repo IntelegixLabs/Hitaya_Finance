@@ -13,6 +13,7 @@ import { Itr5Component } from './itr5/itr5.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TaxBenefitFormComponent } from './tax-benefit-form/tax-benefit-form.component';
 import { TaxBenefitComponent } from './tax-benefit/tax-benefit.component';
+import { IncomeTaxCalculatorComponent } from './income-tax-calculator/income-tax-calculator.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent/*, canActivate: [AuthGuardService] */ },
   { path: 'tax-benefit-form', component: TaxBenefitFormComponent/*, canActivate: [AuthGuardService] */ },
   { path: 'tax-benefit', component: TaxBenefitComponent/*, canActivate: [AuthGuardService] */ },
+  { path: 'income-tax-calculator', component: IncomeTaxCalculatorComponent/*, canActivate: [AuthGuardService] */ },
 ];
 
 @NgModule({
