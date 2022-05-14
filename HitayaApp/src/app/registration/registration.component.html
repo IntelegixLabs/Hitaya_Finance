@@ -10,174 +10,184 @@
         <div class="col-12 col-sm-7 col-md-7">
           <div class="mx-4 mx-sm-0">
             <div class="row">
-              <div class="col-md-12">
-                <h3 class="super-bold">Register as Taxpayer</h3>
-                <p class="type-7 my-0 text-primary">
-                  Individuals / Hindu Undivided Family / Company / Trust / Local Authority /
-                  Artificial Juridical Person / Firm / Limited Liability Partnership /
-                  Association Of Persons / Political Party/ Government / Body Of Individuals
-                </p>
-                <br />
+              <form #signupForm="ngForm" (ngSubmit)="SignUp(signupForm)">
+                <div class="col-md-12">
+                  <h3 class="super-bold">Register as Taxpayer</h3>
+                  <p class="type-7 my-0 text-primary">
+                    Individuals / Hindu Undivided Family / Company / Trust / Local Authority /
+                    Artificial Juridical Person / Firm / Limited Liability Partnership /
+                    Association Of Persons / Political Party/ Government / Body Of Individuals
+                  </p>
+                  <br />
 
-                <h6 class="mb-0">Enter PAN: <span class="text-danger">*</span></h6>
-                <p class="my-0 mb-2 type-7 text-muted">
-                  (PAN will have first 5 alphabets followed by 4 digits and 1 alphabet)
-                </p>
-                <div class="form-group row">
-                  <div class="col-6">
-                    <input type="text" class="form-control" placeholder="Enter PAN" />
-                    <p class="type-7 text-danger mt-1">Error Message!</p>
+                  <h6 class="mb-0">Enter PAN: <span class="text-danger">*</span></h6>
+                  <p class="my-0 mb-2 type-7 text-muted">
+                    (PAN will have first 5 alphabets followed by 4 digits and 1 alphabet)
+                  </p>
+                  <div class="form-group row">
+                    <div class="col-6">
+                      <input type="text" class="form-control" placeholder="Enter PAN" name="PanCard" ngModel required />
+                      <p class="type-7 text-danger mt-1">Error Message!</p>
+                    </div>
                   </div>
-                </div>
-                <h6 class="mb-0">
-                  Please confirm if you want to register as
-                  <strong>"Individual taxpayer"</strong>
-                </h6>
-                <div class="row mt-1">
-                  <div class="col-md-8">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" id="individual-taxpayer1" name="individual-taxpayer" required>
-                          <label class="form-check-label text-muted type-6" for="individual-taxpayer1"> Yes</label>
+                  <h6 class="mb-0">
+                    Please confirm if you want to register as
+                    <strong>"Individual taxpayer"</strong>
+                  </h6>
+                  <div class="row mt-1">
+                    <div class="col-md-8">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" id="individual-taxpayer1" value="Yes" name="IndividulaTax" ngModel />
+                            <label class="form-check-label text-muted type-6" for="individual-taxpayer1"> Yes</label>
+                          </div>
                         </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" id="individual-taxpayer2" name="individual-taxpayer" required>
-                          <label class="form-check-label text-muted type-6" for="individual-taxpayer2">No</label>
+                        <div class="col-md-6">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" id="individual-taxpayer2" value="No" name="IndividulaTax" ngModel />
+                            <label class="form-check-label text-muted type-6" for="individual-taxpayer2">No</label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
-                <hr />
-                <div class="row">
-                  <div class="col-md-6">
-                    <h6 for="first-name">First Name: <span class="text-danger">*</span></h6>
-                    <input type="text" class="form-control" id="first-name" placeholder="First Name" />
-                    <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                  <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                  <hr />
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h6 for="first-name">First Name: <span class="text-danger">*</span></h6>
+                      <input type="text" class="form-control" id="first-name" placeholder="First Name" name="FirstName" ngModel required />
+                      <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                    </div>
+                    <div class="col-md-6">
+                      <h6 for="last-name">Last Name: <span class="text-danger">*</span></h6>
+                      <input type="text" class="form-control" id="last-name" placeholder="Last Name" name="LastName" ngModel required />
+                      <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                    </div>
                   </div>
-                  <div class="col-md-6">
-                    <h6 for="last-name">Last Name: <span class="text-danger">*</span></h6>
-                    <input type="text" class="form-control" id="last-name" placeholder="Last Name" />
-                    <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+
+                  <br />
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h6 for="phone">Phone: <span class="text-danger">*</span></h6>
+                      <input type="text" class="form-control" id="phone" placeholder="Phone Number" name="PhoneNumber" ngModel required />
+                      <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                    </div>
+                    <div class="col-md-6">
+                      <h6 for="email">Email: <span class="text-danger">*</span></h6>
+                      <input type="text" class="form-control" id="email" placeholder="Email Address" name="Email" ngModel required />
+                      <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                    </div>
                   </div>
-                </div>
 
-                <br />
+                  <br />
 
-                <div class="row">
-                  <div class="col-md-6">
-                    <h6 for="phone">Phone: <span class="text-danger">*</span></h6>
-                    <input type="text" class="form-control" id="phone" placeholder="First Name" />
-                    <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
-                  </div>
-                  <div class="col-md-6">
-                    <h6 for="email">Email: <span class="text-danger">*</span></h6>
-                    <input type="text" class="form-control" id="email" placeholder="Last Name" />
-                    <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
-                  </div>
-                </div>
-
-                <br />
-
-                <h6 class="mb-0">
-                  Gender: <span class="text-danger">*</span>
-                </h6>
-                <div class="row mt-1">
-                  <div class="col-md-8">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" id="gender1" name="gender" required>
-                          <label class="form-check-label text-muted type-6" for="gender1">Male</label>
+                  <h6 class="mb-0">
+                    Gender: <span class="text-danger">*</span>
+                  </h6>
+                  <div class="row mt-1">
+                    <div class="col-md-8">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" id="gender1" value="Male" name="Gender" ngModel />
+                            <label class="form-check-label text-muted type-6" for="gender1">Male</label>
+                          </div>
                         </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" id="gender2" name="gender" required>
-                          <label class="form-check-label text-muted type-6" for="gender2">Female</label>
+                        <div class="col-md-4">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" id="gender2" value="Female" name="Gender" ngModel />
+                            <label class="form-check-label text-muted type-6" for="gender2">Female</label>
+                          </div>
                         </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" id="gender3" name="gender" required>
-                          <label class="form-check-label text-muted type-6" for="gender3">Transgender</label>
+                        <div class="col-md-4">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" id="gender3" value="Male" name="Other" ngModel />
+                            <label class="form-check-label text-muted type-6" for="gender3">Other</label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                  <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
 
-                <br />
+                  <br />
 
-                <div class="row">
-                  <div class="col-md-6">
-                    <h6 for="date-of-birth">Date of Birth: <span class="text-danger">*</span></h6>
-                    <input type="date" class="form-control" id="date-of-birth" placeholder="First Name" />
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h6 for="date-of-birth">Date of Birth: <span class="text-danger">*</span></h6>
+                      <input type="date" class="form-control" id="date-of-birth" name="DOB" ngModel required />
+                    </div>
                   </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-6">
-                    <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                  <div class="form-group row">
+                    <div class="col-6">
+                      <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                    </div>
                   </div>
-                </div>
 
-                <hr />
+                  <hr />
 
-                <div class="form-group">
-                  <h6 for="address">Address:</h6>
-                  <textarea id="address" class="form-control"></textarea>
-                </div>
-
-                <div class="form-group row mt-2">
-                  <div class="col-4">
-                    <h6 for="pincode">Pincode: <span class="text-danger">*</span></h6>
-                    <input type="text" class="form-control" id="pincode" placeholder="Enter Pincode" />
-                    <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                  <div class="form-group">
+                    <h6 for="address">Address:</h6>
+                    <textarea id="address" class="form-control" name="Address" ngModel required></textarea>
                   </div>
-                </div>
 
-                <br />
+                  <div class="form-group row mt-2">
+                    <div class="col-4">
+                      <h6 for="pincode">Pincode: <span class="text-danger">*</span></h6>
+                      <input type="text" class="form-control" id="pincode" placeholder="Enter Pincode" name="Pin" ngModel required />
+                      <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                    </div>
+                  </div>
 
-                <h6 class="mb-0">
-                  Residential Status: <span class="text-danger">*</span>
-                </h6>
-                <div class="row mt-1">
-                  <div class="col-md-8">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" id="residential-status1" name="residential-status" required>
-                          <label class="form-check-label text-muted type-6" for="residential-status1"> Resident</label>
+                  <br />
+
+                  <h6 class="mb-0">
+                    Residential Status: <span class="text-danger">*</span>
+                  </h6>
+                  <div class="row mt-1">
+                    <div class="col-md-8">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" id="residential-status1" value="Resident" name="Resident" ngModel>
+                            <label class="form-check-label text-muted type-6" for="residential-status1"> Resident</label>
+                          </div>
                         </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" id="residential-status2" name="residential-status" required>
-                          <label class="form-check-label text-muted type-6" for="residential-status2"> Non-resident</label>
+                        <div class="col-md-6">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" id="residential-status2" value="Non-resident" name="Resident" ngModel>
+                            <label class="form-check-label text-muted type-6" for="residential-status2"> Non-resident</label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                  <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
 
-                <hr />
+                  <div class="form-group row mt-2">
+                    <div class="col-4">
+                      <h6 for="pincode">Password: <span class="text-danger">*</span></h6>
+                      <input type="text" class="form-control" id="password" placeholder="Enter Password" name="Password" ngModel required />
+                      <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+                    </div>
+                  </div>
 
-                <div class="row">
-                  <div class="col-md-6"></div>
-                  <div class="col-md-6">
-                    <button class="btn btn-success float-end">
-                      <span class="bold">CONTINUE</span>
-                      <i class="fa fa-arrow-right fa-fw"></i>
-                    </button>
+                  <hr />
+
+                  <div class="row">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                      <button type="submit" [disabled]="!signupForm.form.valid" class="btn btn-success float-end">
+                        <span class="bold">CONTINUE</span>
+                        <i class="fa fa-arrow-right fa-fw"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>

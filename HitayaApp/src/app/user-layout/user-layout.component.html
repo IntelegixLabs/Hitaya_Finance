@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-effects sticky-top">
+  <a class="navbar-brand super-bold" routerLink="/"><img src="assets/finance.png" height="60" width="70">  Hitaya Finance</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fa fa-bars fa-fw"></i>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end text-center" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink="/user-dashboard" class="nav-link" href="#">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/edit-user" class="nav-link" href="#">Edit Profile</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/wallet" class="nav-link" href="#">Wallet<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/nft" class="nav-link" href="#">NFT<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/loan-notification" class="nav-link" href="#">Loan Notifications<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/loan-history" class="nav-link" href="#">Loan History<span class="sr-only">(current)</span></a>
+      </li>
+      <!--<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Loan
+        </a>
+        <div class="dropdown-menu type-7-2 semi-bold" aria-labelledby="navbarDropdown">
+          <a routerLink="/loan-notification" class="dropdown-item" href="#">Loan Notification</a>
+          <a routerLink="/loan-history" class="dropdown-item" href="#">Loan History</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Calender</a>
+        </div>
+      </li>-->
+      <li class="nav-item">
+        <button class="nav-btn btn btn-secondary btn-sm btn-block">{{userName}}</button>
+      </li>
+      <li class="nav-item nav-item-btn mb-2">
+        <button (click)="logOut()" class="nav-btn btn btn-danger btn-sm btn-block"><i class="fa fa-power-off fa-fw"></i> LogOut</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<script>
+			$(document).ready(function(){
+				$(window).scroll(function(){
+					if($(window).scrollTop() > 100 )
+					{
+						$('.navbar').addClass('navbar-effects');
+					}
+					else
+					{
+						$('.navbar').removeClass('navbar-effects');
+					}
+				});
+
+				$(window).scroll();
+			});
+</script>
