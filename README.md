@@ -1,6 +1,7 @@
 # Hitaya Finance
 
-
+### High Level Architecture of Hitaya_Finance
+<img src="DATA/Hitaya_Finance.png" align="center" />
 ### 1. Run the .NET Backend Application
 
 ```
