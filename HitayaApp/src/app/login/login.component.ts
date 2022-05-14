@@ -16,8 +16,7 @@ export class LoginComponent implements OnInit {
 
   userRole: string;
   userName: string;
-  userLayout: boolean = false;
-  commonLayout: boolean = false;
+  commonLayout: boolean = true;
   status: number;
   errMsg: string;
   msg: string;
@@ -26,18 +25,7 @@ export class LoginComponent implements OnInit {
   constructor(private login: UserValidationService, private router: Router) {
     this.userRole = sessionStorage.getItem('userRole');
     this.userName = sessionStorage.getItem('userName');
-    console.log(this.userName);
-    if (this.userName != null) {
-      this.userLayout = true;
-    }
-    else {
-      if (this.userRole == "Admin") {
-        this.userLayout = true;
-      }
-      else {
-        this.commonLayout = true;
-      }
-    }
+    
   }
 
   ngOnInit(): void {

@@ -1,104 +1,109 @@
-<app-common-layout></app-common-layout>
+<app-common-layout *ngIf="commonLayout"></app-common-layout>
+
+<app-user-layout *ngIf="userLayout"></app-user-layout>
+
 <div class="container mt-5 mb-5">
   <div class="row">
-    <div class="col-md-12">
-      <h2 class="super-bold">Income Tax Return (ITR)</h2>
+    <form #itr5Form="ngForm" (ngSubmit)="submititr5(itr5Form)">
+      <div class="col-md-12">
+        <h2 class="super-bold">Income Tax Return (ITR)</h2>
 
-      <hr />
+        <hr />
 
-      <div class="row">
-        <div class="col-md-12">
-          <h4 class="super-bold mb-0">Gross Total Income</h4>
-          <p class="text-muted mt-0 type-6">
-            Answer to these this questions will help us capturing your income details
-          </p>
+        <div class="row">
+          <div class="col-md-12">
+            <h4 class="super-bold mb-0">Gross Total Income</h4>
+            <p class="text-muted mt-0 type-6">
+              Answer to these this questions will help us capturing your income details
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
 
-              <h4 class="bold my-0">Salary Exemption</h4>
-              <p class="text-muted my-0 type-6">
-                Please provide following information
-              </p>
+                <h4 class="bold my-0">Salary Exemption</h4>
+                <p class="text-muted my-0 type-6">
+                  Please provide following information
+                </p>
 
-              <hr />
+                <hr />
 
-              <div class="row">
-                <div class="col-md-12">
-                  <p class="type-6">
-                    Are you eligible to claim exemption in respect of expenditure incurred on cost of travel on
-                    tour or transfer, maintenance of uniform, etc.
-                  </p>
-                  <div class="row">
-                    <div class="col-md-3">
-                      <div class="custom-control custom-radio mt-2">
-                        <input type="radio" class="custom-control-input" id="filing6" name="filing">
-                        <label class="custom-control-label text-muted type-6" for="filing6">
-                          Yes
-                        </label>
+                <div class="row">
+                  <div class="col-md-12">
+                    <p class="type-6">
+                      Are you eligible to claim exemption in respect of expenditure incurred on cost of travel on
+                      tour or transfer, maintenance of uniform, etc.
+                    </p>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="custom-control custom-radio mt-2">
+                          <input type="radio" class="custom-control-input" id="filing6" name="filing">
+                          <label class="custom-control-label text-muted type-6" for="filing6">
+                            Yes
+                          </label>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="custom-control custom-radio mt-2">
-                        <input type="radio" class="custom-control-input" id="filing7" name="filing">
-                        <label class="custom-control-label text-muted type-6" for="filing7">
-                          No
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <br />
-
-              <div class="row">
-                <div class="col-md-12">
-                  <p class="type-6">
-                    Are you eligible to claim exemption in respect of Special Compensatory Allowance,
-                    Children Education Allowance, Hostel Allowance, etc.
-                  </p>
-                  <div class="row">
-                    <div class="col-md-3">
-                      <div class="custom-control custom-radio mt-2">
-                        <input type="radio" class="custom-control-input" id="filing6" name="filing">
-                        <label class="custom-control-label text-muted type-6" for="filing6">
-                          Yes
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="custom-control custom-radio mt-2">
-                        <input type="radio" class="custom-control-input" id="filing7" name="filing">
-                        <label class="custom-control-label text-muted type-6" for="filing7">
-                          No
-                        </label>
+                      <div class="col-md-3">
+                        <div class="custom-control custom-radio mt-2">
+                          <input type="radio" class="custom-control-input" id="filing7" name="filing">
+                          <label class="custom-control-label text-muted type-6" for="filing7">
+                            No
+                          </label>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
+                <br />
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <p class="type-6">
+                      Are you eligible to claim exemption in respect of Special Compensatory Allowance,
+                      Children Education Allowance, Hostel Allowance, etc.
+                    </p>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="custom-control custom-radio mt-2">
+                          <input type="radio" class="custom-control-input" id="filing6" name="filing">
+                          <label class="custom-control-label text-muted type-6" for="filing6">
+                            Yes
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="custom-control custom-radio mt-2">
+                          <input type="radio" class="custom-control-input" id="filing7" name="filing">
+                          <label class="custom-control-label text-muted type-6" for="filing7">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <hr />
+        <hr />
 
-      <div class="row">
-        <div class="col-md-12">
-          <button class="btn btn-success float-right">CONFIRM <i class="fa fa-arrow-right fa-fw"></i></button>
+        <div class="row">
+          <div class="col-md-12">
+            <button type="submit" [disabled]="!itr5Form.form.valid" class="btn btn-success float-right">CONFIRM <i class="fa fa-arrow-right fa-fw"></i></button>
+          </div>
         </div>
+
+
       </div>
-
-
+    </form>
     </div>
-  </div>
 </div>
 
 <app-footer></app-footer>
