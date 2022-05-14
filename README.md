@@ -1,4 +1,14 @@
-# Hitaya Finance
+<h1 align="center">HITAYA FINANCE</h1>
+
+	
+<strong>Hitaya Finance </strong>support taxpayers to understand crucial information about taxation, ensures proper tax filing procedures, encourages an individual to pay taxes and provide updated news about current union budget and taxation updates.
+
+Contains everything related to tax, clears the fog and prevent confusions between tax regimes and helps an taxpayee to understand which one is best for him/her.
+
+It also aimed to first time taxpayers to get started easily.
+
+Tax Calculator. Suggestion on which regime is best for a taxpayer based on current salary, expenses, income, deductions, etc. Get your detailed calculated tax info. Tables generated describes tax benefit details. Even one can download PDF of it. User Interface even a child can understand in just 10 seconds. All the data are stored so in future, one can see his/her tax info. Clears the clutters of tax filing issues. Loads of information to make it easy for beginners.
+	
 
 
 
@@ -33,7 +43,7 @@ $ ng serve
 
 <br />
 <p align="center">
-	<img src="DATA/0.PNG" width="400"/>
+  <img src="DATA/0.PNG" width="400"/>
   <img src="DATA/1.PNG" width="400"/>
   <img src="DATA/2.PNG" width="400"/>
   <img src="DATA/3.PNG" width="400"/>
