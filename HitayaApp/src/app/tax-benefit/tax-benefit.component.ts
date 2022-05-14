@@ -124,13 +124,13 @@ export class TaxBenefitComponent implements OnInit {
           this.advanceTaxPaid = this.tax_values[0]['advanceTaxPaid'];
 
           this.total_taxable_income = Number(this.totalYearlyIncome) - (Number(this.standardDeduction) + 2400 + Number(this.tdsPaid) + Number(this.advanceTaxPaid));
-          this.total_taxable_income_deductions = this.total_taxable_income - Number(this._80c80ccc) - Number(this._80ccd1b) - Number(this._80ccd2) - Number(this._80dHipParents) - Number(this._80dHipSelf) - Number(this._80dd) - Number(this._80ddb) - Number(this._80e) - Number(this._80tta) - Number(this._80u);
+          this.total_taxable_income_deductions = Number(Number(this.total_taxable_income) - Number(this._80c80ccc) - Number(this._80ccd1b) - Number(this._80ccd2) - Number(this._80dHipParents) - Number(this._80dHipSelf) - Number(this._80dd) - Number(this._80ddb) - Number(this._80e) - Number(this._80tta) - Number(this._80u));
 
           if (this.total_taxable_income_deductions <= 250000) {
             this.tax_payable = 0;
           }
           else if (this.total_taxable_income_deductions >= 250001 && this.total_taxable_income_deductions >= 500000) {
-            this.tax_payable = this.tax_payable * 0.05;
+            this.tax_payable = this.total_taxable_income_deductions * 0.05;
           }
           else if (this.total_taxable_income_deductions >= 500001 && this.total_taxable_income_deductions >= 750000) {
             this.tax_payable = 12500 + ((this.total_taxable_income_deductions - 500000) * 0.10);

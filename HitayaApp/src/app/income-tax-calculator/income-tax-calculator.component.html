@@ -1,143 +1,146 @@
-<app-common-layout></app-common-layout>
+<app-common-layout *ngIf="commonLayout"></app-common-layout>
 
-  <div class="container my-4">
-    <div class="row">
-      <div class="col-md-12">
-        <h3 class="super-bold">Income Tax Calculator</h3>
-        <br />
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="super-bold">Income Details</h4>
-                <br />
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <h6>Income from Salary</h6>
-                      <input type="number" id="income-from-salary" class="form-control"  [(ngModel)]="incomeSalary" />
-                    </div>
-                    <div class="form-group mt-4">
-                      <h6>Exemptions & Deductions from Salary</h6>
-                      <input type="number" id="deductions-from-salary" class="form-control" [(ngModel)]="exemptionsDeductions" />
-                    </div>
-                    <div class="form-group mt-4">
-                      <h6>Income from Interest</h6>
-                      <input type="number" id="income-from-interest" class="form-control" [(ngModel)]="incomeFromInterest" />
-                    </div>
-                    <div class="form-group mt-4">
-                      <h6>Other Income</h6>
-                      <input type="number" id="other-income" class="form-control" [(ngModel)]="otherIncome" />
-                    </div>
+<app-user-layout *ngIf="userLayout"></app-user-layout>
+
+
+<div class="container my-4">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="super-bold">Income Tax Calculator</h3>
+      <br />
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="super-bold">Income Details</h4>
+              <br />
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6>Income from Salary</h6>
+                    <input type="number" id="income-from-salary" class="form-control" [(ngModel)]="incomeSalary" />
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <h6>Interest Paid on Home Loan</h6>
-                      <input type="number" id="interest-paid-on-home-loan" class="form-control" [(ngModel)]="interestPaidOnHomeLoan" />
-                    </div>
-                    <div class="form-group mt-4">
-                      <h6>Rental Income Received</h6>
-                      <input type="number" id="rental-income-received" class="form-control" [(ngModel)]="rentalIncomeReceived" />
-                    </div>
-                    <div class="form-group mt-4">
-                      <h6>Interest Pain on Loan</h6>
-                      <input type="number" id="interest-paid-on-loan" class="form-control" [(ngModel)]="interestPaidOnLoan" />
-                    </div>
-                    <div class="form-group mt-4">
-                      <h6>Income from Digital Assets</h6>
-                      <input type="number" id="income-digital-assets" class="form-control" [(ngModel)]="incomeFromDigitalAssets" />
-                    </div>
+                  <div class="form-group mt-4">
+                    <h6>Exemptions & Deductions from Salary</h6>
+                    <input type="number" id="deductions-from-salary" class="form-control" [(ngModel)]="exemptionsDeductions" />
+                  </div>
+                  <div class="form-group mt-4">
+                    <h6>Income from Interest</h6>
+                    <input type="number" id="income-from-interest" class="form-control" [(ngModel)]="incomeFromInterest" />
+                  </div>
+                  <div class="form-group mt-4">
+                    <h6>Other Income</h6>
+                    <input type="number" id="other-income" class="form-control" [(ngModel)]="otherIncome" />
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="super-bold">Deductions</h4>
-                <br />
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <h6>Basic Deductions - 80C</h6>
-                      <input type="number" id="basic-deductions" class="form-control" [(ngModel)]="basicDeductions" />
-                    </div>
-                    <div class="form-group mt-4">
-                      <h6>Interest from Deposits - 80TTA</h6>
-                      <input type="number" id="interest-deposits" class="form-control" [(ngModel)]="interestFromDeposits" />
-                    </div>
-                    <div class="form-group mt-4">
-                      <h6>Medical Insurance</h6>
-                      <input type="number" id="medical-insurance" class="form-control" [(ngModel)]="medicalInsurance" />
-                    </div>
-                    <div class="form-group mt-4">
-                      <h6>Donations to Charity</h6>
-                      <input type="number" id="donations-charity" class="form-control" [(ngModel)]="donationToCharity" />
-                    </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6>Interest Paid on Home Loan</h6>
+                    <input type="number" id="interest-paid-on-home-loan" class="form-control" [(ngModel)]="interestPaidOnHomeLoan" />
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group ">
-                      <h6>Interest on Educational Loan - 80E</h6>
-                      <input type="number" id="interest-educational-loan" class="form-control" [(ngModel)]="interestOnEducationalLoans" />
-                    </div>
-                    <div class="form-group mt-4">
-                      <h6>Interest on Housing Loan - 80EEA</h6>
-                      <input type="number" id="interest-housing-loan" class="form-control" [(ngModel)]="interestOnHousingLoan" />
-                    </div>
-                    <div class="form-group mt-4">
-                      <h6>Employee's Contribution to NPS - 80CCD</h6>
-                      <input type="number" id="employee-contribution-nps" class="form-control" [(ngModel)]="employeeContributionNps" />
-                    </div>
+                  <div class="form-group mt-4">
+                    <h6>Rental Income Received</h6>
+                    <input type="number" id="rental-income-received" class="form-control" [(ngModel)]="rentalIncomeReceived" />
+                  </div>
+                  <div class="form-group mt-4">
+                    <h6>Interest Pain on Loan</h6>
+                    <input type="number" id="interest-paid-on-loan" class="form-control" [(ngModel)]="interestPaidOnLoan" />
+                  </div>
+                  <div class="form-group mt-4">
+                    <h6>Income from Digital Assets</h6>
+                    <input type="number" id="income-digital-assets" class="form-control" [(ngModel)]="incomeFromDigitalAssets" />
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <br />
-
-        <button class="btn btn-primary btn-lg float-end" (click)="calculateTax()">Calculate</button>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="super-bold">Deductions</h4>
+              <br />
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6>Basic Deductions - 80C</h6>
+                    <input type="number" id="basic-deductions" class="form-control" [(ngModel)]="basicDeductions" />
+                  </div>
+                  <div class="form-group mt-4">
+                    <h6>Interest from Deposits - 80TTA</h6>
+                    <input type="number" id="interest-deposits" class="form-control" [(ngModel)]="interestFromDeposits" />
+                  </div>
+                  <div class="form-group mt-4">
+                    <h6>Medical Insurance</h6>
+                    <input type="number" id="medical-insurance" class="form-control" [(ngModel)]="medicalInsurance" />
+                  </div>
+                  <div class="form-group mt-4">
+                    <h6>Donations to Charity</h6>
+                    <input type="number" id="donations-charity" class="form-control" [(ngModel)]="donationToCharity" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group ">
+                    <h6>Interest on Educational Loan - 80E</h6>
+                    <input type="number" id="interest-educational-loan" class="form-control" [(ngModel)]="interestOnEducationalLoans" />
+                  </div>
+                  <div class="form-group mt-4">
+                    <h6>Interest on Housing Loan - 80EEA</h6>
+                    <input type="number" id="interest-housing-loan" class="form-control" [(ngModel)]="interestOnHousingLoan" />
+                  </div>
+                  <div class="form-group mt-4">
+                    <h6>Employee's Contribution to NPS - 80CCD</h6>
+                    <input type="number" id="employee-contribution-nps" class="form-control" [(ngModel)]="employeeContributionNps" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <br />
+      <br />
 
-    <div class="row">
-      <div class="col-md-12">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th class="w-50"> </th>
-              <th class="w-25">Old Tax Regime</th>
-              <th class="w-25">New Tax Regime</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>Gross Total Income</th>
-              <td>₹ {{ totalIncome }}</td>
-              <td>₹ {{ totalIncome }}</td>
-            </tr>
-            <tr>
-              <th>Deductions</th>
-              <td>₹ {{ totalDeductions }}</td>
-              <td>₹ {{ totalDeductions }}</td>
-            </tr>
-            <tr>
-              <th>Standard Deduction</th>
-              <td>₹ 50000</td>
-              <td>-</td>
-            </tr>
-            <tr class="table-warning">
-              <th>Total</th>
-              <td>₹ {{ oldTax }}</td>
-              <td>₹ {{ newTax }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <button class="btn btn-primary btn-lg float-end" (click)="calculateTax()">Calculate</button>
     </div>
   </div>
+
+  <br />
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="w-50"> </th>
+            <th class="w-25">Old Tax Regime</th>
+            <th class="w-25">New Tax Regime</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Gross Total Income</th>
+            <td>₹ {{ totalIncome }}</td>
+            <td>₹ {{ totalIncome }}</td>
+          </tr>
+          <tr>
+            <th>Deductions</th>
+            <td>₹ {{ totalDeductions }}</td>
+            <td>₹ {{ totalDeductions }}</td>
+          </tr>
+          <tr>
+            <th>Standard Deduction</th>
+            <td>₹ 50000</td>
+            <td>-</td>
+          </tr>
+          <tr class="table-warning">
+            <th>Total</th>
+            <td>₹ {{ oldTax }}</td>
+            <td>₹ {{ newTax }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 <app-footer></app-footer>
