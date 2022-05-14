@@ -39,7 +39,11 @@ $ ng serve
   <img src="DATA/Hitaya_Finance.png" width="450" height="650" />
 </p>
 
-### 4. Hitaya Finance Runtime Screenshots
+### 4. Hitaya Finance Working Sample
+
+For video demostration refer to the YouTube link <a href="https://www.youtube.com/watch?v=E3p9GZkyPoQ">here.</a> 
+
+### 5. Hitaya Finance Runtime Screenshots
 
 <br />
 <p align="center">
