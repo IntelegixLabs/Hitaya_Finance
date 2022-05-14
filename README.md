@@ -28,3 +28,22 @@ $ ng serve
 <p align="center">
   <img src="DATA/Hitaya_Finance.png" width="450" height="650" />
 </p>
+
+### 4. Hitaya_Finance Runtime Screenshots
+
+<br />
+<p align="center">
+	<img src="DATA/0.PNG" width="400"/>
+  <img src="DATA/1.PNG" width="400"/>
+  <img src="DATA/2.PNG" width="400"/>
+  <img src="DATA/3.PNG" width="400"/>
+  <img src="DATA/4.PNG" width="400"/>
+  <img src="DATA/5.PNG" width="400"/>
+  <img src="DATA/6.PNG" width="400"/>
+  <img src="DATA/7.PNG" width="400"/>
+  <img src="DATA/8.PNG" width="400"/>
+  <img src="DATA/9.PNG" width="400"/>
+	
+</p>
+<br />
+
