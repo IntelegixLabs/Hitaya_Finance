@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { IgxFinancialChartModule } from "igniteui-angular-charts";
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoadingComponent } from './loading/loading.component';
@@ -23,6 +25,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TaxBenefitFormComponent } from './tax-benefit-form/tax-benefit-form.component';
 import { IncomeTaxCalculatorComponent } from './income-tax-calculator/income-tax-calculator.component';
 import { UserLayoutComponent } from './user-layout/user-layout.component';
+import { CryptoDataComponent } from './crypto-data/crypto-data.component';
+import { StockDataComponent } from './stock-data/stock-data.component';
+import { SavingAnalysisComponent } from './saving-analysis/saving-analysis.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +47,10 @@ import { UserLayoutComponent } from './user-layout/user-layout.component';
     DashboardComponent,
     TaxBenefitFormComponent,
     IncomeTaxCalculatorComponent,
-    UserLayoutComponent
+    UserLayoutComponent,
+    CryptoDataComponent,
+    StockDataComponent,
+    SavingAnalysisComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,8 @@ import { UserLayoutComponent } from './user-layout/user-layout.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    IgxFinancialChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
