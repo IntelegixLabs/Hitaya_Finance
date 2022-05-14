@@ -4,7 +4,7 @@
 
 <p align="center">
   <img src="DATA/Hitaya_Finance.png" width="450" height="650" />
->/p>
+</p>
 
 ### 1. Run the .NET Backend Application
 
