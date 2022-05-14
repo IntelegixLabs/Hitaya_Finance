@@ -1,10 +1,6 @@
 # Hitaya Finance
 
-### High Level Architecture of Hitaya_Finance
 
-<p align="center">
-  <img src="DATA/Hitaya_Finance.png" width="450" height="650" />
-</p>
 
 ### 1. Run the .NET Backend Application
 
@@ -26,3 +22,9 @@ $ cd HitayaApp
 $ npm install
 $ ng serve
 ```
+
+### 3. High Level Architecture of Hitaya_Finance
+
+<p align="center">
+  <img src="DATA/Hitaya_Finance.png" width="450" height="650" />
+</p>
