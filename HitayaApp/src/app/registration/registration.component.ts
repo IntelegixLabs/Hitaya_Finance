@@ -30,7 +30,7 @@ export class RegistrationComponent implements OnInit {
 
     console.log("registeration-form");
 
-    this.credentials = { PAN_CARD: form.value.PanCard, INDIVIDUAL_TAX: form.value.IndividulaTax, FIRSTNAME: form.value.FirstName, LASTNAME: form.value.LastName, PHONE_NUMBER: form.value.PhoneNumber, EMAILID: form.value.Email, GENDER: form.value.Gender, DOB: form.value.DOB, ADDRESS: form.value.Address, PIN: form.value.Pin, RESIDENT: form.value.Resident, PASSWORD: form.value.Password };
+    this.credentials = { panCard: form.value.PanCard, individualTax: form.value.IndividulaTax, firstname: form.value.FirstName, lastname: form.value.LastName, phoneNumber: form.value.PhoneNumber, emailid: form.value.Email, gender: form.value.Gender, dob: form.value.DOB, address: form.value.Address, pin: form.value.Pin, resident: form.value.Resident, password: form.value.Password };
 
     console.log(this.credentials);
 
