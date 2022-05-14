@@ -1,7 +1,7 @@
 # Hitaya Finance
 
 
-# Run the .NET Backend Application
+### 1. Run the .NET Backend Application
 
 ```
 $ git clone https://github.com/IntelegixLabs/Hitaya_Finance
@@ -12,7 +12,7 @@ $ cd Hitaya_Finance.ServiceLayer
 $ dotnet watch run --Hitaya_Finance.ServiceLayer
 ```
 
-# Run the Angular App
+### 2. Run the Angular App
 
 ```
 $ git clone https://github.com/IntelegixLabs/Hitaya_Finance
