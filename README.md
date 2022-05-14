@@ -7,7 +7,7 @@ Contains everything related to tax, clears the fog and prevent confusions betwee
 
 It also aimed to first time taxpayers to get started easily.
 
-Tax Calculator. Suggestion on which regime is best for a taxpayer based on current salary, expenses, income, deductions, etc. Get your detailed calculated tax info. Tables generated describes tax benefit details. Even one can download PDF of it. User Interface even a child can understand in just 10 seconds. All the data are stored so in future, one can see his/her tax info. Clears the clutters of tax filing issues. Loads of information to make it easy for beginners.
+<strong>Tax Calculator.</strong> Suggestion on which regime is best for a taxpayer based on current salary, expenses, income, deductions, etc. Get your detailed calculated tax info. Tables generated describes tax benefit details. Even one can download PDF of it. User Interface even a child can understand in just 10 seconds. All the data are stored so in future, one can see his/her tax info. Clears the clutters of tax filing issues. Loads of information to make it easy for beginners.
 	
 
 
