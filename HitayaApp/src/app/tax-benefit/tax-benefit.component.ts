@@ -41,8 +41,11 @@ export class TaxBenefitComponent implements OnInit {
   _80tta: string | undefined;
   totalYearlyIncome: string | undefined;
   standardDeduction: string | undefined;
-  tdsPaid: string | string;
-  advanceTaxPaid: string | string;
+  tdsPaid: string | undefined;
+  advanceTaxPaid: string | undefined;
+  total_taxable_income: number;
+  total_taxable_income_deductions: number;
+  tax_payable: number;
 
   // Profile Details
   fullName: string;
@@ -119,9 +122,36 @@ export class TaxBenefitComponent implements OnInit {
           this._80tta = this.tax_values[0]['_80tta'];
           this.tdsPaid = this.tax_values[0]['tdsPaid'];
           this.advanceTaxPaid = this.tax_values[0]['advanceTaxPaid'];
-        }
-      }
 
+          this.total_taxable_income = Number(this.totalYearlyIncome) - (Number(this.standardDeduction) + 2400 + Number(this.tdsPaid) + Number(this.advanceTaxPaid));
+          this.total_taxable_income_deductions = this.total_taxable_income - Number(this._80c80ccc) - Number(this._80ccd1b) - Number(this._80ccd2) - Number(this._80dHipParents) - Number(this._80dHipSelf) - Number(this._80dd) - Number(this._80ddb) - Number(this._80e) - Number(this._80tta) - Number(this._80u);
+
+          if (this.total_taxable_income_deductions <= 250000) {
+            this.tax_payable = 0;
+          }
+          else if (this.total_taxable_income_deductions >= 250001 && this.total_taxable_income_deductions >= 500000) {
+            this.tax_payable = this.tax_payable * 0.05;
+          }
+          else if (this.total_taxable_income_deductions >= 500001 && this.total_taxable_income_deductions >= 750000) {
+            this.tax_payable = 12500 + ((this.total_taxable_income_deductions - 500000) * 0.10);
+          }
+          else if (this.total_taxable_income_deductions >= 750001 && this.total_taxable_income_deductions >= 1000000) {
+            this.tax_payable = 37500 + ((this.total_taxable_income_deductions - 750000) * 0.15);
+          }
+          else if (this.total_taxable_income_deductions >= 1000001 && this.total_taxable_income_deductions >= 1250000) {
+            this.tax_payable = 75000 + ((this.total_taxable_income_deductions - 1000000) * 0.20);
+          }
+          else if (this.total_taxable_income_deductions >= 1250001 && this.total_taxable_income_deductions >= 1500000) {
+            this.tax_payable = 125000 + ((this.total_taxable_income_deductions - 12500000) * 0.25);
+          }
+          else {
+            this.tax_payable = 187500 + ((this.total_taxable_income_deductions - 1500000) * 0.30);
+          }
+
+
+        }
+
+      }
     );
 
   }
