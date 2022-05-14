@@ -10,7 +10,7 @@ $ dotnet clean
 $ dotnet build Hitaya_Finance.sln
 $ cd Hitaya_Finance.ServiceLayer
 $ dotnet watch run --Hitaya_Finance.ServiceLayer
-``
+```
 
 # Run the Angular App
 
