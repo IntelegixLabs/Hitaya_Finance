@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+
+import { IUserDetail } from '../tax-interface/IUserDetail';
+
+import { UserValidationService } from '../tax-services/user-validation/user-validation.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,9 +14,64 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  userRole: string;
+  userName: string;
+  userLayout: boolean = false;
+  commonLayout: boolean = false;
+  status: number;
+  errMsg: string;
+  msg: string;
+  credentials: IUserDetail;
+
+  constructor(private login: UserValidationService, private router: Router) {
+    this.userRole = sessionStorage.getItem('userRole');
+    this.userName = sessionStorage.getItem('userName');
+    console.log(this.userName);
+    if (this.userName != null) {
+      this.userLayout = true;
+    }
+    else {
+      if (this.userRole == "Admin") {
+        this.userLayout = true;
+      }
+      else {
+        this.commonLayout = true;
+      }
+    }
+  }
 
   ngOnInit(): void {
   }
+
+
+  submitLoginForm(form: NgForm) {
+
+    console.log("Login Form");
+
+    this.credentials = { panCard: form.value.PanCard, individualTax: null, firstname: null, lastname: null, phoneNumber: null, emailid: null, gender: null, dob: null, address: null, pin: null, resident: null, password: form.value.Password  };
+
+    console.log(this.credentials);
+
+    this.login.validateCredentials(this.credentials).subscribe(
+      responseLoginStatus => {
+        this.status = responseLoginStatus;
+        if (this.status == 1) {
+          sessionStorage.setItem('userName', form.value.PanCard);
+          sessionStorage.setItem('userRole', 'User');
+
+
+          
+
+          this.router.navigate(['/index']);
+        }
+        else {
+          this.msg = this.status + ". Try again with valid credentials.";
+          alert("invalid");
+        }
+      },
+      () => console.log("SubmitLoginForm method executed successfully")
+    );
+  }
+
 
 }

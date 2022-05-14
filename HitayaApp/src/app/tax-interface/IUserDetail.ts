@@ -1,14 +1,14 @@
 export interface IUserDetail {
-  PAN_CARD : string,
-  INDIVIDUAL_TAX: string,
-  FIRSTNAME: string,
-  LASTNAME: string,
-  PHONE_NUMBER: string,
-  EMAILID: string,
-  GENDER: string,
-  DOB: string,
-  ADDRESS: string,
-  PIN: string,
-  RESIDENT: string,
-  PASSWORD: string
+  panCard : string,
+  individualTax: string,
+  firstname: string,
+  lastname: string,
+  phoneNumber: string,
+  emailid: string,
+  gender: string,
+  dob: string,
+  address: string,
+  pin: string,
+  resident: string,
+  password: string
 }
