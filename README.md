@@ -40,11 +40,13 @@ $ ng serve
   <img src="DATA/4.PNG" width="400"/>
   <img src="DATA/5.PNG" width="400"/>
   <img src="DATA/6.PNG" width="400"/>
-  <img src="DATA/7.PNG" width="400"/>
-  <img src="DATA/8.PNG" width="400"/>
-  <img src="DATA/9.PNG" width="400"/>
+  <img src="DATA/7.PNG"/>
+  <img src="DATA/8.PNG"/>
+  <img src="DATA/9.PNG"/>
   <img src="DATA/10.PNG"/>
+  <br />
   <img src="DATA/11.PNG"/>
+  <br />
   <img src="DATA/12.PNG"/>
   <img src="DATA/13.PNG"/>
 	
