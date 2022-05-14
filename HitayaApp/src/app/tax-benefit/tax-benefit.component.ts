@@ -2,12 +2,50 @@ import { Component, OnInit } from '@angular/core';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+
+import { ITax } from '../tax-interface/ITax';
+
+import { TaxServiceService } from '../tax-services/tax-service/tax-service.service';
+
 @Component({
   selector: 'app-tax-benefit',
   templateUrl: './tax-benefit.component.html',
   styleUrls: ['./tax-benefit.component.scss']
 })
 export class TaxBenefitComponent implements OnInit {
+
+  userRole: string;
+  userName: string;
+  fillingYear: string
+  userLayout: boolean = false;
+  commonLayout: boolean = false;
+  status: number;
+  errMsg: string;
+  msg: string;
+  tax_undefined: any;
+  tax_values: ITax | undefined;
+  itr_filling: string | undefined;
+  itr_status: string | undefined;
+  itr_itrform: string | undefined;
+  _80c80ccc: string | undefined;
+  _80dHipSelf: string | undefined;
+  _80dHipParents: string | undefined;
+  _80ccd1b: string | undefined;
+  _80ccd2: string | undefined;
+  _80e: string | undefined;
+  _80u: string | undefined;
+  _80dd: string | undefined;
+  _80ddb: string | undefined;
+  _80tta: string | undefined;
+  totalYearlyIncome: string | undefined;
+  standardDeduction: string | undefined;
+  tdsPaid: string | undefined;
+  advanceTaxPaid: string | undefined;
+  total_taxable_income: number;
+  total_taxable_income_deductions: number;
+  tax_payable: number;
 
   // Profile Details
   fullName: string;
@@ -17,7 +55,6 @@ export class TaxBenefitComponent implements OnInit {
 
   // taxable benefits
   // 1. Deductions
-  standardDeduction: string;
   professionalTax: string;
   totalDeductions: string;
 
@@ -42,11 +79,81 @@ export class TaxBenefitComponent implements OnInit {
   interestSavingsBankAccount: string;
   totalChapterDeduction: string;
 
-  constructor() {
+  constructor(private tax: TaxServiceService, private router: Router) {
     this.fullName = 'SAYAN SINHA';
     this.panNo = 'JKLFR6783D';
     this.itrNo = '267HGJK89869';
     this.slipNo = '1234567800H';
+    this.userRole = sessionStorage.getItem('userRole');
+    this.userName = sessionStorage.getItem('userName');
+    this.fillingYear = sessionStorage.getItem('FillingYear');
+    console.log(this.userName);
+    if (this.userName != null) {
+      this.userLayout = true;
+    }
+    else {
+      if (this.userRole == "Admin") {
+        this.userLayout = true;
+      }
+      else {
+        this.commonLayout = true;
+      }
+    }
+    this.tax.GetUserTaxData(this.userName, this.fillingYear).subscribe(
+      responseStatus => {
+        this.tax_undefined = responseStatus;
+        if (this.tax_undefined.length > 0) {
+          this.tax_values = this.tax_undefined
+          console.log(this.tax_values);
+          this.itr_filling = this.tax_values[0]['fillingYear'];
+          this.itr_status = this.tax_values[0]['fillingStatus'];
+          this.itr_itrform = this.tax_values[0]['itrForm'];
+          this.totalYearlyIncome = this.tax_values[0]['totalYearlyIncome'];
+          this.standardDeduction = this.tax_values[0]['standardDeduction'];
+          this._80c80ccc = this.tax_values[0]['_80c80ccc'];
+          this._80dHipSelf = this.tax_values[0]['_80dHipSelf'];
+          this._80dHipParents = this.tax_values[0]['_80dHipParents'];
+          this._80ccd1b = this.tax_values[0]['_80ccd1b'];
+          this._80ccd2 = this.tax_values[0]['_80ccd2'];
+          this._80e = this.tax_values[0]['_80e'];
+          this._80u = this.tax_values[0]['_80u'];
+          this._80dd = this.tax_values[0]['_80dd'];
+          this._80ddb = this.tax_values[0]['_80ddb'];
+          this._80tta = this.tax_values[0]['_80tta'];
+          this.tdsPaid = this.tax_values[0]['tdsPaid'];
+          this.advanceTaxPaid = this.tax_values[0]['advanceTaxPaid'];
+
+          this.total_taxable_income = Number(this.totalYearlyIncome) - (Number(this.standardDeduction) + 2400 + Number(this.tdsPaid) + Number(this.advanceTaxPaid));
+          this.total_taxable_income_deductions = this.total_taxable_income - Number(this._80c80ccc) - Number(this._80ccd1b) - Number(this._80ccd2) - Number(this._80dHipParents) - Number(this._80dHipSelf) - Number(this._80dd) - Number(this._80ddb) - Number(this._80e) - Number(this._80tta) - Number(this._80u);
+
+          if (this.total_taxable_income_deductions <= 250000) {
+            this.tax_payable = 0;
+          }
+          else if (this.total_taxable_income_deductions >= 250001 && this.total_taxable_income_deductions >= 500000) {
+            this.tax_payable = this.tax_payable * 0.05;
+          }
+          else if (this.total_taxable_income_deductions >= 500001 && this.total_taxable_income_deductions >= 750000) {
+            this.tax_payable = 12500 + ((this.total_taxable_income_deductions - 500000) * 0.10);
+          }
+          else if (this.total_taxable_income_deductions >= 750001 && this.total_taxable_income_deductions >= 1000000) {
+            this.tax_payable = 37500 + ((this.total_taxable_income_deductions - 750000) * 0.15);
+          }
+          else if (this.total_taxable_income_deductions >= 1000001 && this.total_taxable_income_deductions >= 1250000) {
+            this.tax_payable = 75000 + ((this.total_taxable_income_deductions - 1000000) * 0.20);
+          }
+          else if (this.total_taxable_income_deductions >= 1250001 && this.total_taxable_income_deductions >= 1500000) {
+            this.tax_payable = 125000 + ((this.total_taxable_income_deductions - 12500000) * 0.25);
+          }
+          else {
+            this.tax_payable = 187500 + ((this.total_taxable_income_deductions - 1500000) * 0.30);
+          }
+
+
+        }
+
+      }
+    );
+
   }
 
   ngOnInit(): void {

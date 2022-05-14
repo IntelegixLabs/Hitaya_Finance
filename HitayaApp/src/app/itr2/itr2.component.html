@@ -1,4 +1,6 @@
-<app-common-layout></app-common-layout>
+<app-common-layout *ngIf="commonLayout"></app-common-layout>
+
+<app-user-layout *ngIf="userLayout"></app-user-layout>
 
 <div class="container mt-5 mb-5">
   <div class="row">
@@ -6,32 +8,33 @@
       <h2 class="super-bold">Income Tax Return (ITR)</h2>
 
       <div class="row mt-4">
-        <div class="col-md-12">
-          <h3 class="super-bold">Choose ITR Form to Proceed</h3>
-          <h6 class="mt-4">Select ITR Form to file:</h6>
-          <div class="form-group row">
-            <div class="col-6">
-              <select class="custom-select custom-select-sm form-control">
-                <option selected disabled>Select ITR Form</option>
-                <option value="itr1">ITR - 1</option>
-                <option value="itr2">ITR - 4</option>
-              </select>
+        <form #itr2Form="ngForm" (ngSubmit)="submititr2(itr2Form)">
+          <div class="col-md-12">
+            <h3 class="super-bold">Choose ITR Form to Proceed</h3>
+            <h6 class="mt-4">Select ITR Form to file:</h6>
+            <div class="form-group row">
+              <div class="col-6">
+                <select class="custom-select custom-select-sm form-control" name="itrForm" ngModel required>
+                  <option selected disabled>{{itr_itrform}}</option>
+                  <option value="itr1">ITR - 1</option>
+                  <option value="itr2">ITR - 4</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <p class="type-7 text-danger mt-1 mb-0">Error Message!</p>
+            <!--<p class="type-7 text-danger mt-1 mb-0">Error Message!</p>-->
 
-          <hr />
+            <hr />
 
-          <div class="row">
-            <div class="col-md-6"></div>
-            <div class="col-md-6">
-              <button class="btn btn-success btn-block">Proceed</button>
+            <div class="row">
+              <div class="col-md-6"></div>
+              <div class="col-md-6">
+                <button type="submit" [disabled]="!itr2Form.form.valid" class="btn btn-success btn-block">Proceed</button>
+              </div>
             </div>
-          </div>
 
-        </div>
+          </div>
+        </form>
       </div>
-
     </div>
   </div>
 </div>

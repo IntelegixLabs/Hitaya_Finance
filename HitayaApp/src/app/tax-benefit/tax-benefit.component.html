@@ -1,4 +1,6 @@
-<app-common-layout></app-common-layout>
+<app-common-layout *ngIf="commonLayout"></app-common-layout>
+
+<app-user-layout *ngIf="userLayout"></app-user-layout>
 
 <div class="container mt-4 mb-5">
   <div class="row">
@@ -29,10 +31,17 @@
         </thead>
         <tbody>
           <tr>
+            <td>Total Income</td>
+            <td></td>
+            <td>
+              <span id="Total Yearly Income">{{totalYearlyIncome}}</span>
+            </td>
+          </tr>
+          <tr>
             <td>Standard Deduction</td>
             <td>50000.00</td>
             <td>
-              <span id="standardDeduction">50000.00</span>
+              <span id="standardDeduction">{{standardDeduction}}</span>
             </td>
           </tr>
           <tr>
@@ -42,11 +51,25 @@
               <span id="professionalTax">2400.00</span>
             </td>
           </tr>
+          <tr>
+            <td>TDS PAID</td>
+            <td> </td>
+            <td>
+              <span id="professionalTax">{{tdsPaid}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Advance Tax Paid</td>
+            <td> </td>
+            <td>
+              <span id="professionalTax">{{advanceTaxPaid}}</span>
+            </td>
+          </tr>
           <tr class="table-warning">
             <th>Total</th>
             <th></th>
             <th>
-              <span id="totalDeductions">52400.00</span>
+              <span id="totalDeductions">{{total_taxable_income}}</span>
             </th>
           </tr>
         </tbody>
@@ -95,7 +118,7 @@
           <tr class="table-warning">
             <th>Total</th>
             <th></th>
-            <th><span id="totalExemption">52400.00</span></th>
+            <th><span id="totalExemption">{{total_taxable_income}}</span></th>
           </tr>
         </tbody>
         <thead>
@@ -122,12 +145,12 @@
               </span>
             </td>
             <td>150000.00</td>
-            <td><span id="ccc80Deductions">32512.00</span></td>
+            <td><span id="ccc80Deductions">{{_80c80ccc}}</span></td>
           </tr>
           <tr>
             <td>80D HIP for self, Spouse, Children</td>
             <td>25000.00</td>
-            <td><span id="hipSelf">0.00</span></td>
+            <td><span id="hipSelf">{{_80dHipSelf}}</span></td>
           </tr>
           <tr>
             <td>
@@ -136,26 +159,26 @@
               <span id="text-muted">(INR 25000 in case of Non-Senior citzen)</span>
             </td>
             <td>50000.00</td>
-            <td><span id="hipParents">0.00</span></td>
+            <td><span id="hipParents">{{_80dHipParents}}</span></td>
           </tr>
           <tr>
             <td>80CCD (1B) NPS self contribution</td>
             <td>50000.00</td>
-            <td><span id="npsSelf">0.00</span></td>
+            <td><span id="npsSelf">{{_80ccd1b}}</span></td>
           </tr>
           <tr>
             <td>
               80CCD (2) NPS Employer contribution
             </td>
             <td>10% of Basic + DA</td>
-            <td><span id="npsEmployer">0.00</span></td>
+            <td><span id="npsEmployer">{{_80ccd2}}</span></td>
           </tr>
           <tr>
             <td>
               80E interest on higher education loan
             </td>
             <td>NA</td>
-            <td><span id="higherEducationLoan">0.00</span></td>
+            <td><span id="higherEducationLoan">{{_80e}}</span></td>
           </tr>
           <tr>
             <td>
@@ -164,7 +187,7 @@
               <span id="text-muted">(40% INR 75000, 80% INR 125000)</span>
             </td>
             <td>125000</td>
-            <td><span id="personDisability">0.00</span></td>
+            <td><span id="personDisability">{{_80u}}</span></td>
           </tr>
           <tr>
             <td>
@@ -173,7 +196,7 @@
               <span id="text-muted">(40% INR 75000, 80% INR 125000)</span>
             </td>
             <td>125000</td>
-            <td><span id="personDisabilityDependent">0.00</span></td>
+            <td><span id="personDisabilityDependent">{{_80dd}}</span></td>
           </tr>
           <tr>
             <td>
@@ -182,19 +205,24 @@
               <span id="text-muted">(INR 40000 in case of Non-senior citizen)</span>
             </td>
             <td>100000</td>
-            <td><span id="treatmentSpecifiedDisease">0.00</span></td>
+            <td><span id="treatmentSpecifiedDisease">{{_80ddb}}</span></td>
           </tr>
           <tr>
             <td>
               80TTA interest on savings bank account & others
             </td>
             <td>100000</td>
-            <td><span id="interestSavingsBankAccount">0.00</span></td>
+            <td><span id="interestSavingsBankAccount">{{_80tta}}</span></td>
           </tr>
           <tr class="table-warning">
             <th>Total</th>
             <th></th>
-            <th><span id="totalChapterDeduction">32512.00</span></th>
+            <th><span id="totalChapterDeduction">{{total_taxable_income_deductions}}</span></th>
+          </tr>
+          <tr class="table-success">
+            <th>Total tax need to be Paid</th>
+            <th></th>
+            <th><span id="totalChapterDeduction">{{tax_payable}}</span></th>
           </tr>
         </tbody>
         <thead>

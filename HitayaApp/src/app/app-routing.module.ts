@@ -15,6 +15,10 @@ import { TaxBenefitFormComponent } from './tax-benefit-form/tax-benefit-form.com
 import { TaxBenefitComponent } from './tax-benefit/tax-benefit.component';
 import { IncomeTaxCalculatorComponent } from './income-tax-calculator/income-tax-calculator.component';
 
+import { CryptoDataComponent } from './crypto-data/crypto-data.component';
+import { StockDataComponent } from './stock-data/stock-data.component';
+import { SavingAnalysisComponent } from './saving-analysis/saving-analysis.component';
+
 
 const routes: Routes = [
   { path: '', component: LoadingComponent },
@@ -30,6 +34,9 @@ const routes: Routes = [
   { path: 'tax-benefit-form', component: TaxBenefitFormComponent/*, canActivate: [AuthGuardService] */ },
   { path: 'tax-benefit', component: TaxBenefitComponent/*, canActivate: [AuthGuardService] */ },
   { path: 'income-tax-calculator', component: IncomeTaxCalculatorComponent/*, canActivate: [AuthGuardService] */ },
+  { path: 'crypto', component: CryptoDataComponent /*, canActivate: [AuthGuardService] */ },
+  { path: 'stock', component: StockDataComponent /*, canActivate: [AuthGuardService] */ },
+  { path: 'saving-analysis', component: SavingAnalysisComponent /*, canActivate: [AuthGuardService] */ },
 ];
 
 @NgModule({
