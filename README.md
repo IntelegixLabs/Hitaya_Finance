@@ -39,7 +39,7 @@ $ ng serve
   <img src="DATA/Hitaya_Finance.png" width="450" height="650" />
 </p>
 
-### 4. Hitaya_Finance Runtime Screenshots
+### 4. Hitaya Finance Runtime Screenshots
 
 <br />
 <p align="center">
