@@ -31,6 +31,13 @@
         </thead>
         <tbody>
           <tr>
+            <td>Total Income</td>
+            <td></td>
+            <td>
+              <span id="Total Yearly Income">{{totalYearlyIncome}}</span>
+            </td>
+          </tr>
+          <tr>
             <td>Standard Deduction</td>
             <td>50000.00</td>
             <td>
@@ -44,11 +51,25 @@
               <span id="professionalTax">2400.00</span>
             </td>
           </tr>
+          <tr>
+            <td>TDS PAID</td>
+            <td> </td>
+            <td>
+              <span id="professionalTax">{{tdsPaid}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Advance Tax Paid</td>
+            <td> </td>
+            <td>
+              <span id="professionalTax">{{advanceTaxPaid}}</span>
+            </td>
+          </tr>
           <tr class="table-warning">
             <th>Total</th>
             <th></th>
             <th>
-              <span id="totalDeductions">{{totalYearlyIncome}}</span>
+              <span id="totalDeductions">{{total_taxable_income}}</span>
             </th>
           </tr>
         </tbody>
@@ -97,7 +118,7 @@
           <tr class="table-warning">
             <th>Total</th>
             <th></th>
-            <th><span id="totalExemption">52400.00</span></th>
+            <th><span id="totalExemption">{{total_taxable_income}}</span></th>
           </tr>
         </tbody>
         <thead>
@@ -196,7 +217,12 @@
           <tr class="table-warning">
             <th>Total</th>
             <th></th>
-            <th><span id="totalChapterDeduction">32512.00</span></th>
+            <th><span id="totalChapterDeduction">{{total_taxable_income_deductions}}</span></th>
+          </tr>
+          <tr class="table-success">
+            <th>Total tax need to be Paid</th>
+            <th></th>
+            <th><span id="totalChapterDeduction">{{tax_payable}}</span></th>
           </tr>
         </tbody>
         <thead>
