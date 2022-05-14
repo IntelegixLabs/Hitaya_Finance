@@ -20,7 +20,8 @@ export class UserLayoutComponent implements OnInit {
 
   logOut() {
     sessionStorage.removeItem('userName');
-    this.router.navigate(['/register']);
+    sessionStorage.removeItem('userRole');
+    this.router.navigate(['/login']);
   }
 
 
