@@ -1,45 +1,47 @@
 <nav class="navbar navbar-expand-md navbar-effects sticky-top">
-  <a class="navbar-brand super-bold no-underline" routerLink="/"><img src="assets/finance.png" style="max-width: 32px;">
-    Hitaya Finance</a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fa fa-bars fa-fw"></i>
-  </button>
-  <div class="collapse navbar-collapse justify-content-end text-center" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a routerLink="/user-dashboard" class="nav-link" href="#">Dashboard</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/crypto" class="nav-link" href="#">Crypto Currency</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/stock" class="nav-link" href="#">Stock Market</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/saving-analysis" class="nav-link" href="#">Saving Analysis<span
-            class="sr-only">(current)</span></a>
-      </li>
-      <!--<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Loan
-        </a>
-        <div class="dropdown-menu type-7-2 semi-bold" aria-labelledby="navbarDropdown">
-          <a routerLink="/loan-notification" class="dropdown-item" href="#">Loan Notification</a>
-          <a routerLink="/loan-history" class="dropdown-item" href="#">Loan History</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Calender</a>
-        </div>
-      </li>-->
-      <li class="nav-item">
-        <button class="nav-btn btn btn-secondary btn-sm btn-block">{{ userName }}</button>
-      </li>
-      <li class="nav-item nav-item-btn mb-2">
-        <div class="d-grid">
-          <button (click)="logOut()" class="nav-btn btn btn-danger btn-sm">
-            <i class="fa fa-power-off fa-fw"></i> LogOut</button>
-        </div>
-      </li>
-    </ul>
+  <div class="container-fluid">
+    <a class="navbar-brand super-bold no-underline" routerLink="/"><img src="assets/finance.png" style="max-width: 32px;">
+      Hitaya Finance</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars fa-fw"></i>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end text-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a routerLink="/user-dashboard" class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/crypto" class="nav-link" href="#">Crypto Currency</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/stock" class="nav-link" href="#">Stock Market</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/saving-analysis" class="nav-link" href="#">Saving Analysis<span
+              class="sr-only">(current)</span></a>
+        </li>
+        <!--<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Loan
+          </a>
+          <div class="dropdown-menu type-7-2 semi-bold" aria-labelledby="navbarDropdown">
+            <a routerLink="/loan-notification" class="dropdown-item" href="#">Loan Notification</a>
+            <a routerLink="/loan-history" class="dropdown-item" href="#">Loan History</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Calender</a>
+          </div>
+        </li>-->
+        <li class="nav-item">
+          <button class="nav-btn btn btn-secondary btn-sm btn-block">{{ userName }}</button>
+        </li>
+        <li class="nav-item nav-item-btn mb-2">
+          <div class="d-grid">
+            <button (click)="logOut()" class="nav-btn btn btn-danger btn-sm">
+              <i class="fa fa-power-off fa-fw"></i> LogOut</button>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

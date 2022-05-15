@@ -11,6 +11,10 @@ import { CryptoDataService } from '../tax-services/crypto-data/crypto-data.servi
   styleUrls: ['./crypto-data.component.scss']
 })
 export class CryptoDataComponent implements OnInit {
+  userRole: string;
+  userName: string;
+  userLayout: boolean = false;
+  commonLayout: boolean = false;
 
   public data: Object[];
   public data_refined: Object[];
@@ -20,7 +24,22 @@ export class CryptoDataComponent implements OnInit {
   status: any[];
   msg: string;
 
-  constructor(private crypto_data: CryptoDataService, private router: Router) { }
+  constructor(private crypto_data: CryptoDataService, private router: Router) {
+    this.userRole = sessionStorage.getItem('userRole');
+    this.userName = sessionStorage.getItem('userName');
+    console.log(this.userName);
+    if (this.userName != null) {
+      this.userLayout = true;
+    }
+    else {
+      if (this.userRole == "Admin") {
+        this.userLayout = true;
+      }
+      else {
+        this.commonLayout = true;
+      }
+    }
+   }
 
   ngOnInit(): void {
     this.getcryptokdata();
