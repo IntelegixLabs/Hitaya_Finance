@@ -72,7 +72,7 @@ export class IncomeTaxCalculatorComponent implements OnInit {
     this.oldTax = this.oldRegimeTaxMethod(this.totalIncome, this.totalDeductions);
     this.newTax = this.newRegimeTaxMethod(this.totalIncome, this.totalDeductions);
 
-    this.switchTab(); // switching the tab to calulate tab
+    // this.switchTab(); // switching the tab to calulate tab
   }
 
   public oldRegimeTaxMethod(totalIncome: number, totalDeductions: number): number {
@@ -115,20 +115,20 @@ export class IncomeTaxCalculatorComponent implements OnInit {
     return this.taxAmount;
   }
 
-  public switchTab() {
-    let i: any = 0;
-    let el: any = document.getElementsByClassName("nav-link");
-    for (i = 0; i < el.length; i++) {
-      el[i].classList.remove('active');
-    }
+  // public switchTab() {
+  //   let i: any = 0;
+  //   let el: any = document.getElementsByClassName("nav-link");
+  //   for (i = 0; i < el.length; i++) {
+  //     el[i].classList.remove('active');
+  //   }
 
-    let el2: any = document.getElementsByClassName("tab-pane");
-    for (i = 0; i < el2.length; i++) {
-      el2[i].classList.remove('active');
-    }
+  //   let el2: any = document.getElementsByClassName("tab-pane");
+  //   for (i = 0; i < el2.length; i++) {
+  //     el2[i].classList.remove('active');
+  //   }
 
-    document.getElementById('calculate-tab').classList.add('active');
-    document.getElementById('calculate-tab-pane').classList.add('show');
-    document.getElementById('calculate-tab-pane').classList.add('active');
-  }
+  //   document.getElementById('calculate-tab').classList.add('active');
+  //   document.getElementById('calculate-tab-pane').classList.add('show');
+  //   document.getElementById('calculate-tab-pane').classList.add('active');
+  // }
 }
