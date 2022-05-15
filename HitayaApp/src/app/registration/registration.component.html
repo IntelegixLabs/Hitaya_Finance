@@ -4,10 +4,10 @@
   <div class="row">
     <div class="col-md-8 offset-md-2">
       <div class="row">
-        <div class="col-sm-5 col-md-5">
+        <div class="col-sm-5 col-md-4">
           <img class="w-100 img-fluid d-none d-sm-block" src="assets/user.svg" />
         </div>
-        <div class="col-12 col-sm-7 col-md-7">
+        <div class="col-12 col-sm-7 col-md-8">
           <div class="mx-4 mx-sm-0">
             <div class="row">
               <form #signupForm="ngForm" (ngSubmit)="SignUp(signupForm)">
@@ -25,12 +25,12 @@
                     (PAN will have first 5 alphabets followed by 4 digits and 1 alphabet)
                   </p>
                   <div class="form-group row">
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                       <input type="text" class="form-control" placeholder="Enter PAN" name="PanCard" ngModel required />
                       <!--<p class="type-7 text-danger mt-1">Error Message!</p>-->
                     </div>
                   </div>
-                  <h6 class="mb-0">
+                  <h6 class="mb-0 mt-4">
                     Please confirm if you want to register as
                     <strong>"Individual taxpayer"</strong>
                   </h6>
@@ -55,12 +55,12 @@
                   <!--<p class="type-7 text-danger mt-1 mb-0">Error Message!</p>-->
                   <hr />
                   <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-6 col-md-6">
                       <h6 for="first-name">First Name: <span class="text-danger">*</span></h6>
                       <input type="text" class="form-control" id="first-name" placeholder="First Name" name="FirstName" ngModel required />
                       <!--<p class="type-7 text-danger mt-1 mb-0">Error Message!</p>-->
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-6 col-md-6">
                       <h6 for="last-name">Last Name: <span class="text-danger">*</span></h6>
                       <input type="text" class="form-control" id="last-name" placeholder="Last Name" name="LastName" ngModel required />
                       <!--<p class="type-7 text-danger mt-1 mb-0">Error Message!</p>-->
@@ -76,7 +76,7 @@
                       <!--<p class="type-7 text-danger mt-1 mb-0">Error Message!</p>-->
                     </div>
                     <div class="col-md-6">
-                      <h6 for="email">Email: <span class="text-danger">*</span></h6>
+                      <h6 for="email" class="mt-4 mt-sm-4 mt-md-0">Email: <span class="text-danger">*</span></h6>
                       <input type="text" class="form-control" id="email" placeholder="Email Address" name="Email" ngModel required />
                       <!--<p class="type-7 text-danger mt-1 mb-0">Error Message!</p>-->
                     </div>
@@ -116,7 +116,7 @@
                   <br />
 
                   <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-6 col-sm-6 col-md-4">
                       <h6 for="date-of-birth">Date of Birth: <span class="text-danger">*</span></h6>
                       <input type="date" class="form-control" id="date-of-birth" name="DOB" ngModel required />
                     </div>
@@ -135,7 +135,7 @@
                   </div>
 
                   <div class="form-group row mt-2">
-                    <div class="col-4">
+                    <div class="col-6">
                       <h6 for="pincode">Pincode: <span class="text-danger">*</span></h6>
                       <input type="text" class="form-control" id="pincode" placeholder="Enter Pincode" name="Pin" ngModel required />
                       <!--<p class="type-7 text-danger mt-1 mb-0">Error Message!</p>-->
@@ -168,7 +168,7 @@
                   <!--<p class="type-7 text-danger mt-1 mb-0">Error Message!</p>-->
 
                   <div class="form-group row mt-2">
-                    <div class="col-4">
+                    <div class="col-6">
                       <h6 for="pincode">Password: <span class="text-danger">*</span></h6>
                       <input type="text" class="form-control" id="password" placeholder="Enter Password" name="Password" ngModel required />
                       <!--<p class="type-7 text-danger mt-1 mb-0">Error Message!</p>-->
@@ -181,8 +181,8 @@
                     <div class="col-md-6"></div>
                     <div class="col-md-6">
                       <button type="submit" [disabled]="!signupForm.form.valid" class="btn btn-success float-end">
-                        <span class="bold">CONTINUE</span>
-                        <i class="fa fa-arrow-right fa-fw"></i>
+                        <i class="fa-solid fa-user-plus fa-fw"></i>
+                        <span class="bold"> REGISTER</span>
                       </button>
                     </div>
                   </div>
