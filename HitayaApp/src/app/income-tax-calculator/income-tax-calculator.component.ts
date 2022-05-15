@@ -14,34 +14,34 @@ export class IncomeTaxCalculatorComponent implements OnInit {
   commonLayout: boolean = false;
 
   // Income Details
-  incomeSalary: number;
-  exemptionsDeductions: number;
-  incomeFromInterest: number;
-  otherIncome: number;
-  interestPaidOnHomeLoan: number;
-  rentalIncomeReceived: number;
-  interestPaidOnLoan: number;
-  incomeFromDigitalAssets: number;
+  incomeSalary: number = 0;
+  exemptionsDeductions: number = 0;
+  incomeFromInterest: number = 0;
+  otherIncome: number = 0;
+  interestPaidOnHomeLoan: number = 0;
+  rentalIncomeReceived: number = 0;
+  interestPaidOnLoan: number = 0;
+  incomeFromDigitalAssets: number = 0;
 
   // Deductions
-  basicDeductions: number;
-  interestFromDeposits: number;
-  medicalInsurance: number;
-  donationToCharity: number;
-  interestOnEducationalLoans: number;
-  interestOnHousingLoan: number;
-  employeeContributionNps: number;
+  basicDeductions: number = 0;
+  interestFromDeposits: number = 0;
+  medicalInsurance: number = 0;
+  donationToCharity: number = 0;
+  interestOnEducationalLoans: number = 0;
+  interestOnHousingLoan: number = 0;
+  employeeContributionNps: number = 0;
 
   // Others
-  standardDeduction: number;
-  taxRate: number;
-  taxAmount: number;
-  totalIncome: number;
-  totalDeductions: number;
-  oldTax: number;
-  newTax: number;
-  grossIncome: number;
-  income: number;
+  standardDeduction: number = 0;
+  taxRate: number = 0;
+  taxAmount: number = 0;
+  totalIncome: number = 0;
+  totalDeductions: number = 0;
+  oldTax: number = 0;
+  newTax: number = 0;
+  grossIncome: number = 0;
+  income: number = 0;
 
   constructor(private router: Router) {
     this.userRole = sessionStorage.getItem('userRole');
@@ -71,6 +71,8 @@ export class IncomeTaxCalculatorComponent implements OnInit {
     // Calculation in Old Regime
     this.oldTax = this.oldRegimeTaxMethod(this.totalIncome, this.totalDeductions);
     this.newTax = this.newRegimeTaxMethod(this.totalIncome, this.totalDeductions);
+
+    this.switchTab(); // switching the tab to calulate tab
   }
 
   public oldRegimeTaxMethod(totalIncome: number, totalDeductions: number): number {
@@ -111,5 +113,22 @@ export class IncomeTaxCalculatorComponent implements OnInit {
     }
 
     return this.taxAmount;
+  }
+
+  public switchTab() {
+    let i: any = 0;
+    let el: any = document.getElementsByClassName("nav-link");
+    for (i = 0; i < el.length; i++) {
+      el[i].classList.remove('active');
+    }
+
+    let el2: any = document.getElementsByClassName("tab-pane");
+    for (i = 0; i < el2.length; i++) {
+      el2[i].classList.remove('active');
+    }
+
+    document.getElementById('calculate-tab').classList.add('active');
+    document.getElementById('calculate-tab-pane').classList.add('show');
+    document.getElementById('calculate-tab-pane').classList.add('active');
   }
 }
