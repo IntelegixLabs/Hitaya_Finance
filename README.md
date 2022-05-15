@@ -17,6 +17,9 @@ It also aimed to first time taxpayers to get started easily.
 - All the data are stored so in future, one can see his/her tax info. 
 - Clears the clutters of tax filing issues by mentioning each statements. 
 - Loads of information to make it easy for beginners.
+- Realtime Savings Analysis Calculator
+- Realtime Stock Market Information
+- Realtime Crypto Market Information
 	
 
 
