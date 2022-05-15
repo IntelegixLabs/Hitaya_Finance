@@ -11,6 +11,10 @@ import { StockDataService } from '../tax-services/stock-data/stock-data.service'
   styleUrls: ['./stock-data.component.scss']
 })
 export class StockDataComponent implements OnInit {
+  userRole: string;
+  userName: string;
+  userLayout: boolean = false;
+  commonLayout: boolean = false;
 
   public data: Object[];
   public data_refined: Object[];
@@ -20,7 +24,22 @@ export class StockDataComponent implements OnInit {
   status: any[];
   msg: string;
 
-  constructor(private stock_data: StockDataService, private router: Router) { }
+  constructor(private stock_data: StockDataService, private router: Router) {
+    this.userRole = sessionStorage.getItem('userRole');
+    this.userName = sessionStorage.getItem('userName');
+    console.log(this.userName);
+    if (this.userName != null) {
+      this.userLayout = true;
+    }
+    else {
+      if (this.userRole == "Admin") {
+        this.userLayout = true;
+      }
+      else {
+        this.commonLayout = true;
+      }
+    }
+  }
 
   ngOnInit(): void {
     this.getstockdata();
@@ -55,22 +74,14 @@ export class StockDataComponent implements OnInit {
       () => console.log("Data Fetched Successfull")
     );
 
-
-
     this.stock_data.CompanyOverview(this.chosenstock).subscribe(
       responseDataStatus => {
         this.status = responseDataStatus;
         if (this.status != null) {
 
-
-
-
           this.companyData = this.status;
 
           console.log(this.companyData);
-
-
-
         }
         else {
           this.msg = this.status + ". Try again with valid credentials.";

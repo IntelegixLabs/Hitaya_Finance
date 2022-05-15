@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-saving-analysis',
@@ -7,6 +8,11 @@ import Chart from 'chart.js/auto';
   styleUrls: ['./saving-analysis.component.scss']
 })
 export class SavingAnalysisComponent implements OnInit {
+
+  userRole: string;
+  userName: string;
+  userLayout: boolean = false;
+  commonLayout: boolean = false;
 
   age = 40;
   salary = 50000;
@@ -32,9 +38,27 @@ export class SavingAnalysisComponent implements OnInit {
   display_accumulatedSavings: any;
   myChart: any;
 
-  constructor() {
+  constructor(private router: Router) {
+    this.userRole = sessionStorage.getItem('userRole');
+    this.userName = sessionStorage.getItem('userName');
+    console.log(this.userName);
+    if (this.userName != null) {
+      this.userLayout = true;
+    }
+    else {
+      if (this.userRole == "Admin") {
+        this.userLayout = true;
+      }
+      else {
+        this.commonLayout = true;
+      }
+    }
+
     this.computeData();
   }
+  // constructor() {
+  //   this.computeData();
+  // }
 
   ngOnInit(): void {
 
@@ -99,7 +123,7 @@ export class SavingAnalysisComponent implements OnInit {
 
     this.retirementage = retirementage;
 
-    // To Fix Retirement Age shouldn't be less than age. 
+    // To Fix Retirement Age shouldn't be less than age.
     if (this.retirementage <= this.age) {
       this.age = this.retirementage;
     }
@@ -201,7 +225,7 @@ export class SavingAnalysisComponent implements OnInit {
     this.myChart.update();
   }
 
-  // for Updating both the data and the graph at once. 
+  // for Updating both the data and the graph at once.
   updateAnalysis() {
     this.computeData();
     this.getchartUpdate();

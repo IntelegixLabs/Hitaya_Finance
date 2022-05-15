@@ -157,31 +157,36 @@ export class TaxBenefitComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.standardDeduction = document.getElementById('standardDeduction').innerHTML;
-    this.professionalTax = document.getElementById('professionalTax').innerHTML;
-    this.totalDeductions = document.getElementById('totalDeductions').innerHTML;
-
-    this.hraExemption = document.getElementById('hraExemption').innerHTML;
-    this.ltaExemption = document.getElementById('ltaExemption').innerHTML;
-    this.ceaExemption = document.getElementById('ceaExemption').innerHTML;
-    this.chaExemption = document.getElementById('chaExemption').innerHTML;
-    this.transportExemption = document.getElementById('transportExemption').innerHTML;
-    this.totalExemption = document.getElementById('totalExemption').innerHTML;
-
-    this.ccc80Deductions = document.getElementById('ccc80Deductions').innerHTML;
-    this.hipSelf = document.getElementById('hipSelf').innerHTML;
-    this.hipParents = document.getElementById('hipParents').innerHTML;
-    this.npsSelf = document.getElementById('npsSelf').innerHTML;
-    this.npsEmployer = document.getElementById('npsEmployer').innerHTML;
-    this.higherEducationLoan = document.getElementById('higherEducationLoan').innerHTML;
-    this.personDisability = document.getElementById('personDisability').innerHTML;
-    this.personDisabilityDependent = document.getElementById('personDisabilityDependent').innerHTML;
-    this.treatmentSpecifiedDisease = document.getElementById('treatmentSpecifiedDisease').innerHTML;
-    this.interestSavingsBankAccount = document.getElementById('interestSavingsBankAccount').innerHTML;
-    this.totalChapterDeduction = document.getElementById('totalChapterDeduction').innerHTML;
   }
 
   public generatePDF():void {
+    let TOTAL_YEARLY_INCOME: number = Number(document.getElementById('total-yearly-income').innerHTML);
+    let STANDARD_DEDUCTION: number = Number(document.getElementById('standard-deduction').innerHTML);
+    let PROFESSIONAL_TAX: number = Number(document.getElementById('professional-tax').innerHTML);
+    let TDS_PAID: number = Number(document.getElementById('tds-paid').innerHTML);
+    let ADVANCE_TAX: number = Number(document.getElementById('advance-tax').innerHTML);
+    let TOTAL_TAXABLE_INCOME: number = Number(document.getElementById('total-taxable-income').innerHTML);
+
+    let HRA_EXEMPTION: number = Number(document.getElementById('hra-exemption').innerHTML);
+    let LTA_EXEMPTION: number = Number(document.getElementById('lta-exemption').innerHTML);
+    let CEA_EXEMPTION: number = Number(document.getElementById('cea-exemption').innerHTML);
+    let CHA_EXEMPTION: number = Number(document.getElementById('cha-exemption').innerHTML);
+    let TRANSPORT_EXEMPTION: number = Number(document.getElementById('transport-exemption').innerHTML);
+    let TOTAL_TAXABLE_INCOME_INCLUDE_EXEMPTIONS: number = Number(document.getElementById('total-taxable-income-include-exemptions').innerHTML);
+
+    let _80C_80CCC: number = Number(document.getElementById('ccc80Deductions').innerHTML);
+    let HIP_SELF: number = Number(document.getElementById('hipSelf').innerHTML);
+    let HIP_PARENTS: number = Number(document.getElementById('hipParents').innerHTML);
+    let NPS_SELF: number = Number(document.getElementById('npsSelf').innerHTML);
+    let NPS_EMPLOYER: number = Number(document.getElementById('npsEmployer').innerHTML);
+    let HIGHER_EDUCATION_LOAN: number = Number(document.getElementById('higherEducationLoan').innerHTML);
+    let PERSON_DISABILITY: number = Number(document.getElementById('personDisability').innerHTML);
+    let PERSON_DISABILITY_DEPENDENT: number = Number(document.getElementById('personDisabilityDependent').innerHTML);
+    let TREATMENT_SPECIFIED_DISEASE: number = Number(document.getElementById('treatmentSpecifiedDisease').innerHTML);
+    let INTEREST_SAVINGS_BANK_ACCOUNT: number = Number(document.getElementById('interestSavingsBankAccount').innerHTML);
+    let TOTAL_TAXABLE_INCOME_DEDUCTION: number = Number(document.getElementById('total-taxable-income-deductions').innerHTML);
+
+    let TAX_PAYABLE: number = Number(document.getElementById('tax-payable').innerHTML);
       // var pdfObject = jsPDFInvoiceTemplate.default(props);
       // console.log("Object Created: ", pdfObject);
       // window.jsPDF = window.jspdf.jsPDF;
@@ -202,47 +207,50 @@ export class TaxBenefitComponent implements OnInit {
       doc.setFont("Helvetica", "normal");
       // Full Name ----------------------------------------------------
       doc.setTextColor('#333333');
-      doc.text("Name :", 14, 30);
+      doc.text("Name :", 14, 26);
 
       doc.setTextColor('#6E777E');
-      doc.text(this.fullName, 26, 30);
+      doc.text(this.fullName, 26, 26);
       // --------------------------------------------------------------
       // PAN ----------------------------------------------------------
       doc.setTextColor('#333333');
-      doc.text("PAN :", 16, 37);
+      doc.text("PAN :", 16, 33);
 
       doc.setTextColor('#6E777E');
-      doc.text(this.panNo, 26, 37);
+      doc.text(this.panNo, 26, 33);
       // --------------------------------------------------------------
       // ITR Form No. -------------------------------------------------
       doc.setTextColor("#333333");
-      doc.text("ITR Form No. :", 138, 30);
+      doc.text("ITR Form No. :", 138, 26);
 
       doc.setTextColor('#6E777E');
-      doc.text(this.itrNo, 164, 30);
+      doc.text(this.itrNo, 164, 26);
       // --------------------------------------------------------------
       // Slip No. -------------------------------------------------
       doc.setTextColor("#333333");
-      doc.text("Slip No. :", 147, 37);
+      doc.text("Slip No. :", 147, 33);
 
       doc.setTextColor('#6E777E');
-      doc.text(this.slipNo, 164, 37);
+      doc.text(this.slipNo, 164, 33);
       // --------------------------------------------------------------
 
       // Top Intersection Line
       doc.setDrawColor('#dee2e6');
-      doc.line(12, 42, 198, 42);
+      doc.line(12, 38, 198, 38);
 
       doc.setTextColor("#333333");
-      doc.text("Details of TAX Benefits are given below :", 14, 50);
+      doc.text("Details of TAX Benefits are given below :", 14, 44);
 
-      autoTable(doc, { startY: 46 });
+      autoTable(doc, { startY: 40 });
       autoTable(doc, {
         head: [['Deductions', 'Maximum', 'Considered']],
         body: [
-          ['Standard Deduction', '50000.00', this.standardDeduction],
-          ['Professional Tax', '', this.professionalTax],
-          ['Total', '', this.totalDeductions],
+          ['Total Income', '', TOTAL_YEARLY_INCOME],
+          ['Standard Deduction', '50000.00', STANDARD_DEDUCTION],
+          ['Professional Tax', '', PROFESSIONAL_TAX],
+          ['TDS Paid', '', TDS_PAID],
+          ['Advance Tax Paid', '', ADVANCE_TAX],
+          ['Total', '', TOTAL_TAXABLE_INCOME],
         ],
         styles: { fontSize: 8, valign: 'middle' },
         columnStyles: {
@@ -252,16 +260,16 @@ export class TaxBenefitComponent implements OnInit {
         }
       });
 
-      autoTable(doc, { startY: 80 });
+      autoTable(doc, { startY: 92 });
       autoTable(doc, {
         head: [['Exemptions u/s 10', 'Maximum', 'Considered']],
         body: [
-          ['HRA Exemption', '50000.00', this.hraExemption],
-          ['LTA Exemption', '', this.ltaExemption],
-          ['CEA Exemption', '', this.ceaExemption],
-          ['CHA Exemption', '', this.chaExemption],
-          ['Transport Exemption', '', this.transportExemption],
-          ['Total', '', this.totalExemption],
+          ['HRA Exemption', '', HRA_EXEMPTION],
+          ['LTA Exemption', '', LTA_EXEMPTION],
+          ['CEA Exemption', '', CEA_EXEMPTION],
+          ['CHA Exemption', '', CHA_EXEMPTION],
+          ['Transport Exemption', '', TRANSPORT_EXEMPTION],
+          ['Total', '', TOTAL_TAXABLE_INCOME_INCLUDE_EXEMPTIONS],
         ],
         styles: { fontSize: 8, valign: 'middle' },
         columnStyles: {
@@ -271,21 +279,21 @@ export class TaxBenefitComponent implements OnInit {
         }
       });
 
-      // doc.autoTable({ startY: number = 136 });
+      autoTable(doc, { startY: 144 });
       autoTable(doc, {
         head: [['Chapter VI-A Deductions', 'Maximum', 'Considered']],
         body: [
-          ['80 C, 80CCC Deductions \n(PF, VPF, PPF, LIC, Tuition Fees, Tax Saving MF, Tax Saving on FDs, SSY, Housing Loan Principal, etc)', '150000.00', this.ccc80Deductions],
-          ['80D HIP for self, Spouse, Children', '25000.00', this.hipSelf],
-          ['80D HIP for Parents \n(INR 25000 in case of Non- Senior citzen)', '50000.00', this.hipParents],
-          ['80CCD (1B) NPS self contribution', '50000.00', this.npsSelf],
-          ['80CCD (2) NPS Employer contribution ', '10% of Basic + DA', this.npsEmployer],
-          ['80E interest on higher education loan ', '', this.higherEducationLoan],
-          ['80U Person with disability \n(40 % INR 75000, 80 % INR 125000)', '125000.00', this.personDisability],
-          ['80DD Person with disability dependent \n(40 % INR 75000, 80 % INR 125000)', '125000.00', this.personDisabilityDependent],
-          ['80DDB Treatment of Specified Disease Self/Dependent \n(INR 40000 in case of Non- senior citizen)', '100000.00', this.treatmentSpecifiedDisease],
-          ['80TTA interest on savings bank account & others', '100000.00', this.interestSavingsBankAccount],
-          ['Total', '', this.totalChapterDeduction],
+          ['80 C, 80CCC Deductions \n(PF, VPF, PPF, LIC, Tuition Fees, Tax Saving MF, Tax Saving on FDs, SSY, Housing Loan Principal, etc)', '150000.00', _80C_80CCC],
+          ['80D HIP for self, Spouse, Children', '25000.00', HIP_SELF],
+          ['80D HIP for Parents \n(INR 25000 in case of Non- Senior citzen)', '50000.00', HIP_PARENTS],
+          ['80CCD (1B) NPS self contribution', '50000.00', NPS_SELF],
+          ['80CCD (2) NPS Employer contribution ', '10% of Basic + DA', NPS_EMPLOYER],
+          ['80E interest on higher education loan ', '', HIGHER_EDUCATION_LOAN],
+          ['80U Person with disability \n(40 % INR 75000, 80 % INR 125000)', '125000.00', PERSON_DISABILITY],
+          ['80DD Person with disability dependent \n(40 % INR 75000, 80 % INR 125000)', '125000.00', PERSON_DISABILITY_DEPENDENT],
+          ['80DDB Treatment of Specified Disease Self/Dependent \n(INR 40000 in case of Non- senior citizen)', '100000.00', TREATMENT_SPECIFIED_DISEASE],
+          ['80TTA interest on savings bank account & others', '100000.00', INTEREST_SAVINGS_BANK_ACCOUNT],
+          ['Total', '', TOTAL_TAXABLE_INCOME_DEDUCTION],
         ],
         styles: { fontSize: 8, valign: 'middle'},
         columnStyles: {
@@ -294,6 +302,12 @@ export class TaxBenefitComponent implements OnInit {
           2: { cellWidth: 25, cellPadding: 2 },
         }
       });
+
+    autoTable(doc, { startY: 255 });
+    autoTable(doc, {
+      head: [['Total tax need to be paid', TAX_PAYABLE]],
+      styles: { fontSize: 8, valign: 'middle' }
+    });
 
       doc.setTextColor('#6E777E');
       doc.setFontSize(8);
