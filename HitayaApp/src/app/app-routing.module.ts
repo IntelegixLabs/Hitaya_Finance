@@ -21,7 +21,7 @@ import { SavingAnalysisComponent } from './saving-analysis/saving-analysis.compo
 
 
 const routes: Routes = [
-  { path: '', component: LoadingComponent },
+  { path: '', component: IndexComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationComponent/*, canActivate: [AuthGuardService] */ },
   { path: 'index', component: IndexComponent/*, canActivate: [AuthGuardService] */ },
