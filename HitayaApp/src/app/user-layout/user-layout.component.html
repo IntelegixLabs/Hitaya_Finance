@@ -1,10 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-effects sticky-top">
-  <a class="navbar-brand super-bold" routerLink="/"><img src="assets/finance.png" height="60" width="70">  Hitaya Finance</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-md navbar-effects sticky-top">
+  <a class="navbar-brand super-bold no-underline" routerLink="/"><img src="assets/finance.png" style="max-width: 32px;">
+    Hitaya Finance</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <i class="fa fa-bars fa-fw"></i>
   </button>
-
-  <div class="collapse navbar-collapse justify-content-end text-center" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse justify-content-end text-center" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a routerLink="/user-dashboard" class="nav-link" href="#">Dashboard</a>
@@ -16,7 +17,8 @@
         <a routerLink="/stock" class="nav-link" href="#">Stock Market</a>
       </li>
       <li class="nav-item">
-        <a routerLink="/saving-analysis" class="nav-link" href="#">Saving Analysis<span class="sr-only">(current)</span></a>
+        <a routerLink="/saving-analysis" class="nav-link" href="#">Saving Analysis<span
+            class="sr-only">(current)</span></a>
       </li>
       <!--<li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -30,30 +32,16 @@
         </div>
       </li>-->
       <li class="nav-item">
-        <button class="nav-btn btn btn-secondary btn-sm btn-block">{{userName}}</button>
+        <button class="nav-btn btn btn-secondary btn-sm btn-block"></button>
       </li>
       <li class="nav-item nav-item-btn mb-2">
-        <button (click)="logOut()" class="nav-btn btn btn-danger btn-sm btn-block"><i class="fa fa-power-off fa-fw"></i> LogOut</button>
+        <div class="d-grid">
+          <button class="nav-btn btn btn-danger btn-sm">
+            <i class="fa fa-power-off fa-fw"></i>
+            LogOut
+          </button>
+        </div>
       </li>
     </ul>
   </div>
 </nav>
-
-
-
-<script>
-			$(document).ready(function(){
-				$(window).scroll(function(){
-					if($(window).scrollTop() > 100 )
-					{
-						$('.navbar').addClass('navbar-effects');
-					}
-					else
-					{
-						$('.navbar').removeClass('navbar-effects');
-					}
-				});
-
-				$(window).scroll();
-			});
-</script>
