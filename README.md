@@ -7,11 +7,20 @@ Contains everything related to tax, clears the fog and prevent confusions betwee
 
 It also aimed to first time taxpayers to get started easily.
 
-<strong>Tax Calculator.</strong> Suggestion on which regime is best for a taxpayer based on current salary, expenses, income, deductions, etc. Get your detailed calculated tax info. Tables generated describes tax benefit details. Even one can download PDF of it. User Interface even a child can understand in just 10 seconds. All the data are stored so in future, one can see his/her tax info. Clears the clutters of tax filing issues. Loads of information to make it easy for beginners.
+## Features
+- Tax Calculator
+- Suggestion on which regime is best for a taxpayer based on current salary, expenses, income, deductions, etc. 
+- Get your detailed calculated tax info. 
+- Tables generated describes tax benefit details. 
+- Even one can download PDF of it. 
+- User Interface even a child can understand in just 10 seconds. 
+- All the data are stored so in future, one can see his/her tax info. 
+- Clears the clutters of tax filing issues by mentioning each statements. 
+- Loads of information to make it easy for beginners.
 	
 
 
-
+## Running the Project
 ### 1. Run the .NET Backend Application
 
 ```
@@ -33,17 +42,17 @@ $ npm install
 $ ng serve
 ```
 
-### 3. High Level Architecture of Hitaya_Finance
+### 3. Project Architecture
 
 <p align="center">
   <img src="DATA/Hitaya_Finance.png" width="450" height="650" />
 </p>
 
-### 4. Hitaya Finance Working Sample
+### 4. Live Application Demo
 
 For video demostration refer to the YouTube link <a href="https://www.youtube.com/watch?v=E3p9GZkyPoQ">here.</a> 
 
-### 5. Hitaya Finance Runtime Screenshots
+### 5. Application Screenshots
 
 <br />
 <p align="center">
