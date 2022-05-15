@@ -64,7 +64,7 @@ export class IncomeTaxCalculatorComponent implements OnInit {
   }
 
   public calculateTax(): void {
-    this.totalIncome = (this.incomeSalary + this.exemptionsDeductions + this.incomeFromInterest + this.otherIncome + this.interestPaidOnHomeLoan + this.rentalIncomeReceived + this.interestPaidOnLoan + this.incomeFromDigitalAssets);
+    this.totalIncome = (this.incomeSalary - this.exemptionsDeductions + this.incomeFromInterest + this.otherIncome + this.interestPaidOnHomeLoan + this.rentalIncomeReceived + this.interestPaidOnLoan + this.incomeFromDigitalAssets);
 
     this.totalDeductions = (this.basicDeductions + this.interestFromDeposits + this.medicalInsurance + this.donationToCharity + this.interestOnEducationalLoans + this.interestOnHousingLoan + this.employeeContributionNps);
 
