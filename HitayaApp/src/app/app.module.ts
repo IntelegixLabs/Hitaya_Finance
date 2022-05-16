@@ -28,6 +28,7 @@ import { UserLayoutComponent } from './user-layout/user-layout.component';
 import { CryptoDataComponent } from './crypto-data/crypto-data.component';
 import { StockDataComponent } from './stock-data/stock-data.component';
 import { SavingAnalysisComponent } from './saving-analysis/saving-analysis.component';
+import { WhyTaxComponent } from './why-tax/why-tax.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { SavingAnalysisComponent } from './saving-analysis/saving-analysis.compo
     UserLayoutComponent,
     CryptoDataComponent,
     StockDataComponent,
-    SavingAnalysisComponent
+    SavingAnalysisComponent,
+    WhyTaxComponent
   ],
   imports: [
     BrowserModule,
