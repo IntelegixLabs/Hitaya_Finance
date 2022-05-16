@@ -18,6 +18,7 @@ import { IncomeTaxCalculatorComponent } from './income-tax-calculator/income-tax
 import { CryptoDataComponent } from './crypto-data/crypto-data.component';
 import { StockDataComponent } from './stock-data/stock-data.component';
 import { SavingAnalysisComponent } from './saving-analysis/saving-analysis.component';
+import { WhyTaxComponent } from './why-tax/why-tax.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,7 @@ const routes: Routes = [
   { path: 'crypto', component: CryptoDataComponent /*, canActivate: [AuthGuardService] */ },
   { path: 'stock', component: StockDataComponent /*, canActivate: [AuthGuardService] */ },
   { path: 'saving-analysis', component: SavingAnalysisComponent /*, canActivate: [AuthGuardService] */ },
+  { path: 'explore/why-tax', component: WhyTaxComponent /*, canActivate: [AuthGuardService] */ }
 ];
 
 @NgModule({

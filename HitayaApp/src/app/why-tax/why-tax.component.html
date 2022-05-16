@@ -1,0 +1,130 @@
+<app-common-layout *ngIf="commonLayout"></app-common-layout>
+<app-user-layout *ngIf="userLayout"></app-user-layout>
+
+<div class="container mt-4 mb-5">
+  <div class="row" id="tax">
+    <div class="col-md-8 offset-md-2">
+      <h2 class="super-bold">Tax</h2>
+      <p class="text-muted mt-3">
+        A Tax is a fee <span class="text-blue">(generally in financial/monetory form)</span> charged by any government for public works providing the best facilities and infrastructure to the nation. Such as building roads, maintaining public services <span class="text-blue">(i.e. buses, railway, metro, offices, hospitals, etc)</span>.
+      </p>
+      <p class="text-muted">
+        The fund collected by government as Tax is used to fund different public expenditure programs.
+      </p>
+
+      <br />
+
+      <h2 class="super-bold">Why Pay Tax ?</h2>
+      <p class="text-muted mt-3">
+        One has to pay taxes if he/she is earning, having a proper income. One is eligible to pay taxes only if a person has
+        minimum income <span class="text-blue">(a minimum amount is defined after which a tax will be charged)</span> that could enable his/her survival.
+      </p>
+      <p class="text-muted">
+        Being a people of this nation, if we don't support our nation where we live in then who will support?
+        It is a shameful act for not paying taxes. This means you're not participating and
+        contributing for the country welfare. This is considered as tax stealing, thus it will invite serious punishment laws defined by constituion.
+      </p>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2 class="super-bold">Income Tax</h2>
+      <p class="text-muted mt-3">
+        According to the Income Tax Act, 1961, every salaried person needs to pay an amount from their salary as tax to the
+        country. This amount of tax is called the Income Tax.
+      </p>
+      <p class="text-muted">
+        The law consists of a lot of amendments and variations with
+        subsections describing the details about tax payment, deductions, and computations. A lot of deductions from subsection
+        80C to 80U are available. The final amount after subtracting all the available tax-saving provisions and deductions is
+        given to the government as the income tax on salary.
+      </p>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row" id="tax-regimes">
+    <div class="col-md-8 offset-md-2">
+      <h2 class="super-bold">Tax Regimes</h2>
+
+      <br />
+
+      <table class="table table-bordered table-responsive-sm text-center">
+        <thead class="text-center table-striped align-middle table-warning">
+          <tr>
+            <th rowspan="2" class="w-25">Income Tax Slab</th>
+            <th colspan="3" class="w-50">Old Regime Slab Rates <br /> FY 20-21 (AY 21-22)</th>
+            <th class="w-25">New Regime Slab Rates <br /> FY 20-21 (AY 21-22)</th>
+          </tr>
+          <tr>
+            <th>Individuals &lt; 60 years</th>
+            <th>Individuals &gt; 60 to &lt; 80 years</th>
+            <th>Individuals &lt; 80 years</th>
+            <th>Applicable for All Individuals</th>
+          </tr>
+        </thead>
+        <tbody class="align-middle">
+          <tr>
+            <th>₹ 0 – ₹ 2.5 lakh</th>
+            <td class="text-danger"> NIL </td>
+            <td class="text-danger"> NIL </td>
+            <td class="text-danger"> NIL </td>
+            <td class="text-danger"> NIL </td>
+          </tr>
+          <tr>
+            <th>₹ 2.5 – ₹ 3 lakh</th>
+            <td rowspan="2" class="text-success">5% (tax rebate u/s 87a is available)</td>
+            <td class="text-danger"> NIL </td>
+            <td class="text-danger"> NIL </td>
+            <td rowspan="2" class="text-primary">5% (tax rebate u/s 87a is available)</td>
+          </tr>
+          <tr>
+            <th>₹ 3 - ₹ 5 lakh</th>
+            <td class="text-success">5% (tax rebate u/s 87a is available)</td>
+            <td class="text-danger"> NIL </td>
+          </tr>
+          <tr>
+            <th>₹ 5 – ₹ 7.5 lakh</th>
+            <td class="text-success">20%</td>
+            <td class="text-success">20%</td>
+            <td class="text-success">20%</td>
+            <td class="text-primary">10%</td>
+          </tr>
+          <tr>
+            <th>₹ 7.5 – ₹ 10 lakh</th>
+            <td class="text-success">20%</td>
+            <td class="text-success">20%</td>
+            <td class="text-success">20%</td>
+            <td class="text-primary">15%</td>
+          </tr>
+          <tr>
+            <th>₹ 10 – ₹ 12.50 lakh</th>
+            <td class="text-success">30%</td>
+            <td class="text-success">30%</td>
+            <td class="text-success">30%</td>
+            <td class="text-primary">20%</td>
+          </tr>
+          <tr>
+            <th>₹ 12.5 – ₹ 15 lakh</th>
+            <td class="text-success">30%</td>
+            <td class="text-success">30%</td>
+            <td class="text-success">30%</td>
+            <td class="text-primary">25%</td>
+          </tr>
+          <tr>
+            <th> > ₹ 15 lakh</th>
+            <td class="text-success">30%</td>
+            <td class="text-success">30%</td>
+            <td class="text-success">30%</td>
+            <td class="text-primary">30%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
